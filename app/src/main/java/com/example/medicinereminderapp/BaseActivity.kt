@@ -1,4 +1,4 @@
 package com.example.medicinereminderapp
 
-class BaseActivity  {
+class BaseActivity {
 }
