@@ -13,8 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         binding.loginBtn.setOnClickListener {
             val intent = Intent(this, BaseActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.registerBtn.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
     }
