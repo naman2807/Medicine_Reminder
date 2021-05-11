@@ -7,4 +7,6 @@
     <string name="enter_your_password">Enter Your Password</string>
     <string name="login">LogIn</string>
     <string name="register">Register</string>
+    <string name="textview">TextView</string>
+    <string name="register_here">Register Here</string>
 </resources>
