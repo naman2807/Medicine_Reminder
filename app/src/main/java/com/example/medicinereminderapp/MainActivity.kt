@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import com.example.medicinereminderapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -11,17 +12,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        binding.loginBtn.setOnClickListener {
-            val intent = Intent(this, BaseActivity::class.java)
-            startActivity(intent)
-        }
+        setContentView(binding.root)
+    }
 
-        binding.registerBtn.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
-        }
+   fun login(view: View){
+        val intent = Intent(this, BaseActivity::class.java)
+        this.startActivity(intent)
+    }
+
+   fun register(view: View){
+        val intent = Intent(this, RegisterActivity::class.java)
+        this.startActivity(intent)
     }
 }
