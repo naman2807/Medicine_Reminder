@@ -20,4 +20,14 @@
     <string name="reminders">Reminders</string>
     <string name="appointments">Appointments</string>
     <string name="reports">Reports</string>
+    <string name="name">Name</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="address">Address</string>
+    <string name="enter_your_address">Enter Your Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="email">Email</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_user_id_reg">Enter your user id</string>
+    <string name="password_register">Password</string>
 </resources>
