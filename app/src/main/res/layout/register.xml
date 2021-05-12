@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_baseline_appointment" />
+        android:src="@drawable/ic_baseline_appointment"
+        android:contentDescription="@string/name" />
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -54,7 +55,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_text_layout"
         android:layout_marginTop="20sp"
-        tools:srcCompat="@drawable/ic_baseline_home_work_24" />
+        android:src="@drawable/ic_baseline_home_work_24"
+        android:contentDescription="@string/address" />
 
     <TextView
         android:id="@+id/address"
@@ -96,7 +98,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_text_layout"
         android:layout_marginTop="20sp"
-        tools:srcCompat="@drawable/ic_baseline_local_phone_24" />
+        android:src="@drawable/ic_baseline_local_phone_24"
+        android:contentDescription="@string/phone_number" />
 
     <TextView
         android:id="@+id/phone"
@@ -139,7 +142,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_text_layout"
         android:layout_marginTop="20sp"
-        tools:srcCompat="@drawable/ic_baseline_email_24" />
+        android:src="@drawable/ic_baseline_email_24"
+        android:contentDescription="@string/email" />
 
     <TextView
         android:id="@+id/email"
@@ -181,7 +185,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_text_layout"
         android:layout_marginTop="20sp"
-        tools:srcCompat="@drawable/ic_baseline_perm_identity_24" />
+        android:src="@drawable/ic_baseline_perm_identity_24"
+        android:contentDescription="@string/user_id" />
 
     <TextView
         android:id="@+id/user"
@@ -223,7 +228,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_text_layout"
         android:layout_marginTop="20sp"
-        tools:srcCompat="@drawable/ic_baseline_lock_24" />
+        android:src="@drawable/ic_baseline_lock_24"
+        android:contentDescription="@string/password_register" />
 
     <TextView
         android:id="@+id/password_register"
