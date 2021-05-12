@@ -8,4 +8,8 @@ import android.view.ViewGroup
 
 class Fragment1 : Fragment() {
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val layout = inflater.inflate(R.layout.fragment_1, container, false)
+        return layout
+    }
 }
