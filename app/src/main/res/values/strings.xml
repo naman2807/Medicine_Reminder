@@ -9,4 +9,6 @@
     <string name="register">Register</string>
     <string name="textview">TextView</string>
     <string name="register_here">Register Here</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
