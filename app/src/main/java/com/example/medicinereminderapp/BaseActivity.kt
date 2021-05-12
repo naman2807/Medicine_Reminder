@@ -39,7 +39,7 @@ class BaseActivity : AppCompatActivity(){
            return@setNavigationItemSelectedListener true
         }
 
-        //Setting up Bottom Navigation Drawer
+//        Setting up Bottom Navigation Drawer
          val bottomNav : BottomNavigationView = findViewById(R.id.bottom_navigation)
          val listener = BottomNavigationView.OnNavigationItemSelectedListener {
             lateinit var selectedFragment : Fragment
