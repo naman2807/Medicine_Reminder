@@ -30,11 +30,11 @@ class BaseActivity : AppCompatActivity(){
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.item1 -> Toast.makeText(this, "Clicked Item1", Toast.LENGTH_LONG).show()
-                R.id.item2 -> Toast.makeText(this, "Clicked Item2", Toast.LENGTH_LONG).show()
-                R.id.item3 -> Toast.makeText(this, "Clicked Item3", Toast.LENGTH_LONG).show()
-                R.id.item4 -> Toast.makeText(this, "Clicked Item4", Toast.LENGTH_LONG).show()
-                R.id.item5 -> Toast.makeText(this, "Clicked Item5", Toast.LENGTH_LONG).show()
+                R.id.pill_schedule -> Toast.makeText(this, "Clicked pill schedule", Toast.LENGTH_LONG).show()
+                R.id.setting -> Toast.makeText(this, "Clicked settings", Toast.LENGTH_LONG).show()
+                R.id.problem -> Toast.makeText(this, "Clicked problem", Toast.LENGTH_LONG).show()
+                R.id.share -> Toast.makeText(this, "Clicked share", Toast.LENGTH_LONG).show()
+                R.id.love_it -> Toast.makeText(this, "Clicked love it", Toast.LENGTH_LONG).show()
             }
            return@setNavigationItemSelectedListener true
         }
@@ -44,9 +44,9 @@ class BaseActivity : AppCompatActivity(){
          val listener = BottomNavigationView.OnNavigationItemSelectedListener {
             lateinit var selectedFragment : Fragment
              when(it.itemId){
-                 R.id.home -> selectedFragment = Fragment1()
-                 R.id.favourite -> selectedFragment = Fragment2()
-                 R.id.search -> selectedFragment = Fragment3()
+                 R.id.reminder -> selectedFragment = Fragment1()
+                 R.id.appointment -> selectedFragment = Fragment2()
+                 R.id.reports -> selectedFragment = Fragment3()
              }
              supportFragmentManager.beginTransaction().replace(R.id.fragment, selectedFragment).commit()
              return@OnNavigationItemSelectedListener true
