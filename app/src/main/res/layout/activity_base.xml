@@ -4,15 +4,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".BaseActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+ <androidx.drawerlayout.widget.DrawerLayout
+     android:id="@+id/drawerLayout"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+     <androidx.constraintlayout.widget.ConstraintLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Activity"
+             android:textSize="25dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+     </androidx.constraintlayout.widget.ConstraintLayout>
+
+     <com.google.android.material.navigation.NavigationView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         app:headerLayout="@layout/nav_header"
+         app:menu="@menu/nav_header_menu"
+         android:layout_gravity="start"
+         android:fitsSystemWindows="true"/>
+
+ </androidx.drawerlayout.widget.DrawerLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
