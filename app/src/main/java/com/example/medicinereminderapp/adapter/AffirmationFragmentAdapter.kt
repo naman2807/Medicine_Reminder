@@ -28,6 +28,6 @@ class AffirmationFragmentAdapter(private val context: Context, private val dataL
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dataList.size
     }
 }
