@@ -24,7 +24,9 @@ class AffirmationFragmentAdapter(private val context: Context, private val dataL
     }
 
     override fun onBindViewHolder(holder: AffirmationViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = dataList[position]
+        holder.textview.text = context.resources.getString(item.description)
+        holder.image.setImageResource(item.image)
     }
 
     override fun getItemCount(): Int {
