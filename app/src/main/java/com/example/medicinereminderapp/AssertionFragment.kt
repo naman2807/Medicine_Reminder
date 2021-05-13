@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.medicinereminderapp.databinding.FragmentAssertionBinding
 
-class AssertionFragmnent : Fragment() {
+class AssertionFragment : Fragment() {
         private lateinit var binding : FragmentAssertionBinding
 
     override fun onCreateView(

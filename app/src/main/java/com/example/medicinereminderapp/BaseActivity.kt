@@ -47,7 +47,7 @@ class BaseActivity : AppCompatActivity(){
                  R.id.reminder -> selectedFragment = ReminderFragment()
                  R.id.appointment -> selectedFragment = AppointmentFragment()
                  R.id.reports -> selectedFragment = ReportsFragment()
-                 R.id.assertion -> selectedFragment = AssertionFragmnent()
+                 R.id.assertion -> selectedFragment = AssertionFragment()
              }
              supportFragmentManager.beginTransaction().replace(R.id.fragment, selectedFragment).commit()
              return@OnNavigationItemSelectedListener true
