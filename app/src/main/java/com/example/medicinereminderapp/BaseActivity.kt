@@ -45,7 +45,7 @@ class BaseActivity : AppCompatActivity(){
              when(it.itemId){
                  R.id.bottom_home -> selectedFragment = HomeFragment()
                  R.id.reminder -> selectedFragment = ReminderFragment()
-                 R.id.appointment -> selectedFragment = Fragment2()
+                 R.id.appointment -> selectedFragment = AppointmentFragment()
                  R.id.reports -> selectedFragment = Fragment3()
                  R.id.assertion -> selectedFragment = AssertionFragmnent()
              }
