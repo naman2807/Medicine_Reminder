@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp.adapter
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -18,7 +19,8 @@ class AffirmationFragmentAdapter(private val context: Context, private val dataL
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AffirmationViewHolder {
-        TODO("Not yet implemented")
+        val layout = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
+        return AffirmationViewHolder(layout)
     }
 
     override fun onBindViewHolder(holder: AffirmationViewHolder, position: Int) {
