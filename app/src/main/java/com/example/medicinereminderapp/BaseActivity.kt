@@ -46,7 +46,7 @@ class BaseActivity : AppCompatActivity(){
                  R.id.bottom_home -> selectedFragment = HomeFragment()
                  R.id.reminder -> selectedFragment = ReminderFragment()
                  R.id.appointment -> selectedFragment = AppointmentFragment()
-                 R.id.reports -> selectedFragment = Fragment3()
+                 R.id.reports -> selectedFragment = ReportsFragment()
                  R.id.assertion -> selectedFragment = AssertionFragmnent()
              }
              supportFragmentManager.beginTransaction().replace(R.id.fragment, selectedFragment).commit()
