@@ -44,9 +44,11 @@ class BaseActivity : AppCompatActivity(){
          val listener = BottomNavigationView.OnNavigationItemSelectedListener {
             lateinit var selectedFragment : Fragment
              when(it.itemId){
+                 R.id.bottom_home -> selectedFragment = HomeFragment()
                  R.id.reminder -> selectedFragment = Fragment1()
                  R.id.appointment -> selectedFragment = Fragment2()
                  R.id.reports -> selectedFragment = Fragment3()
+                 R.id.assertion -> selectedFragment = AssertionFragmnent()
              }
              supportFragmentManager.beginTransaction().replace(R.id.fragment, selectedFragment).commit()
              return@OnNavigationItemSelectedListener true
