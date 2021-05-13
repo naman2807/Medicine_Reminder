@@ -9,7 +9,7 @@ import android.view.ViewGroup
 class ReportsFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val layout = inflater.inflate(R.layout.fragment_3, container, false)
+        val layout = inflater.inflate(R.layout.fragment_reports, container, false)
         return layout
     }
 }
