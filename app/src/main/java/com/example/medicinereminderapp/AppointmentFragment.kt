@@ -9,7 +9,7 @@ import android.view.ViewGroup
 class AppointmentFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val layout = inflater.inflate(R.layout.fragment_2, container, false)
+        val layout = inflater.inflate(R.layout.fragment_appointment, container, false)
         return layout
     }
 }
