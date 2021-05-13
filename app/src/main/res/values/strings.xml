@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Medicine Reminder App</string>
-    <string name="Headline">medicine reminder</string>
+    <string name="Headline">Time is generally the best doctor.</string>
     <string name="user_id">User ID:</string>
     <string name="enter_your_user_id">Enter Your User ID</string>
     <string name="password">Password:</string>
@@ -32,14 +32,14 @@
     <string name="password_register">Password</string>
     <string name="home">Home</string>
     <string name="assertion">Assertion</string>
-    <string name="affirmation1">I am strong.</string>
-    <string name="affirmation2">I believe in myself.</string>
-    <string name="affirmation3">Each day is a new opportunity to grow and be a better version of myself.</string>
-    <string name="affirmation4">Every challenge in my life is an opportunity to learn from.</string>
-    <string name="affirmation5">I have so much to be grateful for.</string>
-    <string name="affirmation6">Good things are always coming into my life.</string>
-    <string name="affirmation7">New opportunities await me at every turn.</string>
-    <string name="affirmation8">I have the courage to follow my heart.</string>
+    <string name="affirmation1">Medicine is a science of uncertainty and the art of probability.</string>
+    <string name="affirmation2">The good physician treats the disease; the great physician treats the patient who has the disease.</string>
+    <string name="affirmation3">The aim of medicine is to prevent disease and prolong life; the ideal of medicine is to eliminate the need of a physician.</string>
+    <string name="affirmation4">The life so short, the craft so long to learn.</string>
+    <string name="affirmation5">The best doctor gives the least medicines.</string>
+    <string name="affirmation6">Medicine cure diseases but only doctors can cure patients.</string>
+    <string name="affirmation7">God cannot be everywhere so He sent the Doctors with excellence and selflessness.</string>
+    <string name="affirmation8">Medicines can cure, but a good doctor’s inspirational words can give the strength to fight from within.</string>
     <string name="affirmation9">Things will unfold at precisely the right time.</string>
     <string name="affirmation10">I will be present in all the moments that this day brings.</string>
 </resources>

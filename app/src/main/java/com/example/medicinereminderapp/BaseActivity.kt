@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -18,6 +19,9 @@ class BaseActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
+
+        //Sets the starting layout to Home page.
+        supportFragmentManager.beginTransaction().replace(R.id.fragment, HomeFragment()).commit()
 
         //Setting up Navigation Drawer
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
