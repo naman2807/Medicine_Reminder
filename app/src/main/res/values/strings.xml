@@ -30,4 +30,6 @@
     <string name="enter_your_email">Enter your email</string>
     <string name="enter_your_user_id_reg">Enter your user id</string>
     <string name="password_register">Password</string>
+    <string name="home">Home</string>
+    <string name="assertion">Assertion</string>
 </resources>
