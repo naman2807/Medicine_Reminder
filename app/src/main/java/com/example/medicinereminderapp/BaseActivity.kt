@@ -74,6 +74,9 @@ class BaseActivity : AppCompatActivity(){
         super.onSaveInstanceState(outState)
     }
 
-
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        restoredFragment = savedInstanceState.getString("Fragment", null)
+    }
 
 }
