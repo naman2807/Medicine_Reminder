@@ -13,4 +13,8 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun toString(): String {
+        return activity?.javaClass?.simpleName!!
+    }
 }

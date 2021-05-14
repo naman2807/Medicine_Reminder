@@ -71,8 +71,6 @@ class BaseActivity : AppCompatActivity(){
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putString("Fragment", selectedFragment.toString())
         super.onSaveInstanceState(outState)
-
-
     }
 
 }
