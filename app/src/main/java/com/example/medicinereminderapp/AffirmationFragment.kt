@@ -31,4 +31,8 @@ class AffirmationFragment : Fragment() {
         recyclerview.layoutManager = LinearLayoutManager(requireContext())
         recyclerview.setHasFixedSize(true)
     }
+
+    override fun toString(): String {
+        return activity?.javaClass?.simpleName!!
+    }
 }
