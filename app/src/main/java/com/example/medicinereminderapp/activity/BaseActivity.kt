@@ -56,11 +56,26 @@ class BaseActivity : AppCompatActivity(){
          val bottomNav : BottomNavigationView = findViewById(R.id.bottom_navigation)
          val listener = BottomNavigationView.OnNavigationItemSelectedListener {
              when(it.itemId){
-                 R.id.bottom_home -> selectedFragment = HomeFragment()
-                 R.id.reminder -> selectedFragment = ReminderFragment()
-                 R.id.appointment -> selectedFragment = AppointmentFragment()
-                 R.id.reports -> selectedFragment = ReportsFragment()
-                 R.id.assertion -> selectedFragment = AffirmationFragment()
+                 R.id.bottom_home -> {
+                     selectedFragment = HomeFragment()
+                     viewModel.selectFragment(selectedFragment)
+                 }
+                 R.id.reminder -> {
+                     selectedFragment = ReminderFragment()
+                     viewModel.selectFragment(selectedFragment)
+                 }
+                 R.id.appointment -> {
+                     selectedFragment = AppointmentFragment()
+                     viewModel.selectFragment(selectedFragment)
+                 }
+                 R.id.reports -> {
+                     selectedFragment = ReportsFragment()
+                     viewModel.selectFragment(selectedFragment)
+                 }
+                 R.id.assertion -> {
+                     selectedFragment = AffirmationFragment()
+                     viewModel.selectFragment(selectedFragment)
+                 }
              }
              supportFragmentManager.beginTransaction().replace(R.id.fragment, selectedFragment).commit()
              return@OnNavigationItemSelectedListener true
