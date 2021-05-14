@@ -8,6 +8,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.fragments.*
 import com.example.medicinereminderapp.viewmodel.BaseActivityViewModel
@@ -17,7 +19,7 @@ import com.google.android.material.navigation.NavigationView
 class BaseActivity : AppCompatActivity(){
 
 //    Add toggle button to open NavigationView
-    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var selectedFragment : Fragment
 
     private val viewModel : BaseActivityViewModel by viewModels()
@@ -27,7 +29,9 @@ class BaseActivity : AppCompatActivity(){
         setContentView(R.layout.activity_base)
 
         //Sets the starting layout to Home page.
-        supportFragmentManager.beginTransaction().replace(R.id.fragment, HomeFragment()).commit()
+        viewModel.selectedFragment.value?.let {
+            supportFragmentManager.beginTransaction().replace(R.id.fragment, it).commit()
+        }
 
         //Setting up Navigation Drawer
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
@@ -63,6 +67,7 @@ class BaseActivity : AppCompatActivity(){
          }
         bottomNav.setOnNavigationItemSelectedListener(listener)
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
