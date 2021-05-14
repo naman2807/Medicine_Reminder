@@ -1,4 +1,6 @@
 package com.example.medicinereminderapp.viewmodel
 
-class BaseActivityViewModel {
+import androidx.lifecycle.ViewModel
+
+class BaseActivityViewModel : ViewModel(){
 }
