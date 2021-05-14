@@ -12,4 +12,8 @@ class AppointmentFragment : Fragment() {
         val layout = inflater.inflate(R.layout.fragment_appointment, container, false)
         return layout
     }
+
+    override fun toString(): String {
+        return activity?.javaClass?.simpleName!!
+    }
 }
