@@ -1,4 +1,4 @@
-package com.example.medicinereminderapp
+package com.example.medicinereminderapp.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

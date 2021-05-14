@@ -1,14 +1,13 @@
 package com.example.medicinereminderapp
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
+import com.example.medicinereminderapp.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -17,12 +16,10 @@ class BaseActivity : AppCompatActivity(){
 //    Add toggle button to open NavigationView
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var selectedFragment : Fragment
-    private lateinit var restoredFragment : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
-
 
         //Sets the starting layout to Home page.
         supportFragmentManager.beginTransaction().replace(R.id.fragment, HomeFragment()).commit()
@@ -67,31 +64,6 @@ class BaseActivity : AppCompatActivity(){
             return true
         }
         return super.onOptionsItemSelected(item)
-
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        outState.putString("Fragment", selectedFragment.toString())
-        super.onSaveInstanceState(outState)
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        restoredFragment = savedInstanceState.getString("Fragment", null)
-    }
-
-    private fun checkFragmentValue(fragmentValue : String){
-        if(fragmentValue == null){
-            selectedFragment = HomeFragment()
-        }else{
-            when(fragmentValue){
-                HomeFragment().toString() -> selectedFragment = HomeFragment()
-                ReminderFragment().toString() -> selectedFragment = ReminderFragment()
-                AffirmationFragment().toString() -> selectedFragment = AffirmationFragment()
-                AppointmentFragment().toString() -> selectedFragment = AppointmentFragment()
-                ReportsFragment().toString() -> selectedFragment = ReportsFragment()
-            }
-        }
 
     }
 
