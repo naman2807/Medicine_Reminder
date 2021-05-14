@@ -15,6 +15,7 @@ class BaseActivity : AppCompatActivity(){
 
 //    Add toggle button to open NavigationView
     lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var selectedFragment : Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +46,6 @@ class BaseActivity : AppCompatActivity(){
 //        Setting up Bottom Navigation Drawer
          val bottomNav : BottomNavigationView = findViewById(R.id.bottom_navigation)
          val listener = BottomNavigationView.OnNavigationItemSelectedListener {
-            lateinit var selectedFragment : Fragment
              when(it.itemId){
                  R.id.bottom_home -> selectedFragment = HomeFragment()
                  R.id.reminder -> selectedFragment = ReminderFragment()
