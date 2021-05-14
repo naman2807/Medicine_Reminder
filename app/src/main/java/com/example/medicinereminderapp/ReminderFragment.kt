@@ -12,4 +12,8 @@ class ReminderFragment : Fragment() {
         val layout = inflater.inflate(R.layout.fragment_reminder, container, false)
         return layout
     }
+
+    override fun toString(): String {
+        return activity?.javaClass?.simpleName!!
+    }
 }
