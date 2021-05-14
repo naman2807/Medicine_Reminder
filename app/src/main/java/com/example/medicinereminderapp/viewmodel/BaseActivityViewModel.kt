@@ -10,5 +10,4 @@ class BaseActivityViewModel : ViewModel(){
     private var _selectedFragment = MutableLiveData<Fragment>()
     val selectedFragment : LiveData<Fragment> = _selectedFragment
 
-
 }
