@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -64,6 +65,13 @@ class BaseActivity : AppCompatActivity(){
             return true
         }
         return super.onOptionsItemSelected(item)
+
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("Fragment", selectedFragment.toString())
+        super.onSaveInstanceState(outState)
+
 
     }
 
