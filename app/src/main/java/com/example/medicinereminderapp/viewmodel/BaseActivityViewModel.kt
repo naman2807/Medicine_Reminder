@@ -14,4 +14,8 @@ class BaseActivityViewModel : ViewModel(){
     init {
         _selectedFragment.value = HomeFragment()
     }
+
+    fun selectFragment(fragment : Fragment){
+        _selectedFragment.value = fragment
+    }
 }
