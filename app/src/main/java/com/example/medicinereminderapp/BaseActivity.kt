@@ -17,6 +17,7 @@ class BaseActivity : AppCompatActivity(){
 //    Add toggle button to open NavigationView
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var selectedFragment : Fragment
+    private lateinit var restoredFragment : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,5 +73,7 @@ class BaseActivity : AppCompatActivity(){
         outState.putString("Fragment", selectedFragment.toString())
         super.onSaveInstanceState(outState)
     }
+
+
 
 }
