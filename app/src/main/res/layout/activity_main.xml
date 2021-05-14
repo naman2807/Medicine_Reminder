@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <TextView
         android:id="@+id/heading"

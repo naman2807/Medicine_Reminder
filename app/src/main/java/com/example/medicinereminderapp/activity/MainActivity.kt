@@ -1,9 +1,8 @@
-package com.example.medicinereminderapp
+package com.example.medicinereminderapp.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
 import com.example.medicinereminderapp.databinding.ActivityMainBinding
 

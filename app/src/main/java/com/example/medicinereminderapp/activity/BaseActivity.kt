@@ -1,4 +1,4 @@
-package com.example.medicinereminderapp
+package com.example.medicinereminderapp.activity
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
