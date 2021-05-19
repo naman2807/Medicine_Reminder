@@ -7,7 +7,7 @@ class HomeDataSource {
 
     fun loadItems() : List<Categories>{
         return listOf<Categories>(
-//                Categories(R.drawable.ic_cardiology, "Cardiologist", )
+                Categories(R.drawable.ic_cardiology, R.string.cardiologist, R.string.specialist)
         )
     }
 }
