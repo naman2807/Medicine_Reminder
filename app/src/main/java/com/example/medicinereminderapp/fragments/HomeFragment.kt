@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.medicinereminderapp.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -15,7 +16,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        val recyclerView : RecyclerView = binding.recyclerView
     }
 
     override fun toString(): String {
