@@ -16,6 +16,7 @@ class HomeFragmentAdapter(private val context : Context, private val dataSource 
     class HomeViewHolder(view : View) : RecyclerView.ViewHolder(view){
         val image : ImageView = view.findViewById(R.id.image_home)
         val text1 : TextView = view.findViewById(R.id.home_text)
+        val text2 : TextView = view.findViewById(R.id.home_text_2)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
