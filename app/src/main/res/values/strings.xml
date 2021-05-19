@@ -42,4 +42,7 @@
     <string name="affirmation8">Medicines can cure, but a good doctor’s inspirational words can give the strength to fight from within.</string>
     <string name="affirmation9">Things will unfold at precisely the right time.</string>
     <string name="affirmation10">I will be present in all the moments that this day brings.</string>
+    <string name="contact_doctor">Contact Doctor</string>
+    <string name="search_google">Search Google</string>
+    <string name="want_advice_on_covid_19">Want advice on COVID-19</string>
 </resources>
