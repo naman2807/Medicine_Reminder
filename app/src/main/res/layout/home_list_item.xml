@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="25dp"
+    app:cardCornerRadius="10dp"
     app:cardBackgroundColor="#CACFEF"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,6 +14,7 @@
 
         <ImageView
             android:id="@+id/image_home"
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -20,12 +22,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/home_text"
+            android:padding="10dp"
             style="?attr/textAppearanceHeadline5"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:id="@+id/home_text_2"
             style="?attr/textAppearanceHeadline6"/>
 
