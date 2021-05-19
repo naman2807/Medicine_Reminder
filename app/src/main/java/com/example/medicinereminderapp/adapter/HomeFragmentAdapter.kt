@@ -28,6 +28,7 @@ class HomeFragmentAdapter(private val context : Context, private val dataSource 
         val item = dataSource[position]
         holder.image.setImageResource(item.imageID)
         holder.text1.text = context.resources.getString(item.text)
+        holder.text2.text = context.resources.getString(item.text1)
 
     }
 
