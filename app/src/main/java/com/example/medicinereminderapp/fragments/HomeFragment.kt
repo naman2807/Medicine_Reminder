@@ -24,6 +24,7 @@ class HomeFragment : Fragment() {
         val dataList : List<Categories> = HomeDataSource().loadItems()
         recyclerView.adapter = HomeFragmentAdapter(requireContext(), dataList)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
     }
 
     override fun toString(): String {
