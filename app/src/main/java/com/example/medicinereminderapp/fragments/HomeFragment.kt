@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.medicinereminderapp.adapter.HomeFragmentAdapter
 import com.example.medicinereminderapp.data.HomeDataSource
 import com.example.medicinereminderapp.databinding.FragmentHomeBinding
 import com.example.medicinereminderapp.model.Categories
@@ -20,6 +21,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recyclerView : RecyclerView = binding.recyclerView
         val dataList : List<Categories> = HomeDataSource().loadItems()
+        recyclerView.adapter = HomeFragmentAdapter(requireContext(), dataList)
     }
 
     override fun toString(): String {
