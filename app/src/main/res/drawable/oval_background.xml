@@ -4,7 +4,7 @@
         android:left="-150dp"
         android:right="-150dp"
         android:top="-200dp">
-        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+        <shape
             android:shape="oval">
             <solid android:color="@color/indigo_500" />
         </shape>
