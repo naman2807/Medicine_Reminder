@@ -1,9 +1,11 @@
 package com.example.medicinereminderapp.adapter
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.model.Categories
 
 class HomeFragmentAdapter(private val context : Context, private val dataSource : List<Categories>):
@@ -14,7 +16,8 @@ class HomeFragmentAdapter(private val context : Context, private val dataSource 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        TODO("Not yet implemented")
+        val layout = LayoutInflater.from(context).inflate(R.layout.home_list_item, parent, false)
+        return HomeViewHolder(layout)
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
