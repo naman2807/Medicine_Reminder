@@ -1,10 +1,13 @@
 package com.example.medicinereminderapp.adapter
 
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.medicinereminderapp.model.Categories
 
-class HomeFragmentAdapter : RecyclerView.Adapter<HomeFragmentAdapter.HomeViewHolder>(){
+class HomeFragmentAdapter(private val context : Context, private val dataSource : List<Categories>):
+        RecyclerView.Adapter<HomeFragmentAdapter.HomeViewHolder>(){
 
     class HomeViewHolder(view : View) : RecyclerView.ViewHolder(view){
 
