@@ -25,7 +25,8 @@ class HomeFragmentAdapter(private val context : Context, private val dataSource 
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = dataSource[position]
+
     }
 
     override fun getItemCount(): Int {
