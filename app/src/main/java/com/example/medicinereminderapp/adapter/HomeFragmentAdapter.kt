@@ -26,6 +26,7 @@ class HomeFragmentAdapter(private val context : Context, private val dataSource 
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val item = dataSource[position]
+        holder.image.setImageResource(item.imageID)
 
     }
 
