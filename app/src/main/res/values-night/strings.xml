@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="categories">Categories</string>
+    <string name="list_of_doctors">List Of Doctors</string>
 </resources>
