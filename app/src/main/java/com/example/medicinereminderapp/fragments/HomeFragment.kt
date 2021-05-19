@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicinereminderapp.adapter.HomeFragmentAdapter
 import com.example.medicinereminderapp.data.HomeDataSource
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
         val recyclerView : RecyclerView = binding.recyclerView
         val dataList : List<Categories> = HomeDataSource().loadItems()
         recyclerView.adapter = HomeFragmentAdapter(requireContext(), dataList)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 
     override fun toString(): String {
