@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.model.Categories
@@ -12,7 +13,7 @@ class HomeFragmentAdapter(private val context : Context, private val dataSource 
         RecyclerView.Adapter<HomeFragmentAdapter.HomeViewHolder>(){
 
     class HomeViewHolder(view : View) : RecyclerView.ViewHolder(view){
-
+        val image : ImageView = view.findViewById(R.id.image_home)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
