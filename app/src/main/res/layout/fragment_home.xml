@@ -74,6 +74,14 @@
             app:layout_constraintStart_toStartOf="parent"
             style="?attr/textAppearanceHeadline4"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/categories"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:scrollbars="horizontal"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

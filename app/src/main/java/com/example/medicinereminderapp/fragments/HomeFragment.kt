@@ -14,6 +14,10 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+    }
+
     override fun toString(): String {
         return activity?.javaClass?.simpleName!!
     }
