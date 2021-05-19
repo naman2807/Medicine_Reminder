@@ -45,4 +45,5 @@
     <string name="contact_doctor">Contact Doctor</string>
     <string name="search_google">Search Google</string>
     <string name="want_advice_on_covid_19">Want advice on COVID-19</string>
+    <string name="categories">Categories</string>
 </resources>
