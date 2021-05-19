@@ -81,7 +81,19 @@
         app:layout_constraintTop_toBottomOf="@id/categories"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
-        android:scrollbars="horizontal"/>
+        android:scrollbars="vertical"/>
+
+        <TextView
+            android:id="@+id/doctor_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_of_doctors"
+            android:layout_marginStart="15dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            style="?attr/textAppearanceHeadline4"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
