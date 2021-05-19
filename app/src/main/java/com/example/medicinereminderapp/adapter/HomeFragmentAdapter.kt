@@ -29,6 +29,6 @@ class HomeFragmentAdapter(private val context : Context, private val dataSource 
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+       return dataSource.size
     }
 }
