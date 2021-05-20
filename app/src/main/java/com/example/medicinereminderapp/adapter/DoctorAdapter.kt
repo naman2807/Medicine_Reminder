@@ -16,6 +16,7 @@ class DoctorAdapter(val context : Context, val dataList : List<Doctor>)
     class DoctorViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         val image : ImageView = view.findViewById(R.id.image_doctor)
         val name : TextView = view.findViewById(R.id.text_doctor_name)
+        val designation : TextView = view.findViewById(R.id.text_specialization)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DoctorViewHolder {
