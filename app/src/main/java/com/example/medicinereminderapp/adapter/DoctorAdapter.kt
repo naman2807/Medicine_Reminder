@@ -27,6 +27,7 @@ class DoctorAdapter(val context : Context, val dataList : List<Doctor>)
 
     override fun onBindViewHolder(holder: DoctorViewHolder, position: Int) {
         val item = dataList[position]
+        holder.image.setImageResource(item.imageId)
     }
 
     override fun getItemCount(): Int {
