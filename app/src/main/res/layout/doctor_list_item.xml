@@ -24,27 +24,24 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:id="@+id/text_doctor_name"
                 android:layout_margin="10dp"
-                style="?attr/textAppearanceHeadline5"/>
+                style="?attr/textAppearanceHeadline4"/>
 
         </LinearLayout>
-        <TextView
+        <TextViewK
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="55dp"
             android:id="@+id/text_specialization"
-            android:textAlignment="center"
-            style="?attr/textAppearanceHeadline4"/>
+            style="?attr/textAppearanceHeadline5"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/text_doctor_desc"
-            style="?attr/textAppearanceHeadline3"/>
+            style="?attr/textAppearanceHeadline6"/>
 
 
     </LinearLayout>
