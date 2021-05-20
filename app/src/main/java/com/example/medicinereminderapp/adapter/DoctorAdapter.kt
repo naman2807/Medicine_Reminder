@@ -30,6 +30,7 @@ class DoctorAdapter(val context : Context, val dataList : List<Doctor>)
         holder.image.setImageResource(item.imageId)
         holder.name.text = context.resources.getString(item.name)
         holder.designation.text = context.resources.getString(item.designation)
+        holder.description.text = context.resources.getString(item.description)
     }
 
     override fun getItemCount(): Int {
