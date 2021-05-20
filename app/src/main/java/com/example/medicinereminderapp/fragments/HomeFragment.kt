@@ -9,9 +9,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicinereminderapp.adapter.HomeFragmentAdapter
+import com.example.medicinereminderapp.data.DoctorDataSource
 import com.example.medicinereminderapp.data.HomeDataSource
 import com.example.medicinereminderapp.databinding.FragmentHomeBinding
 import com.example.medicinereminderapp.model.Categories
+import com.example.medicinereminderapp.model.Doctor
 
 class HomeFragment : Fragment() {
     private lateinit var binding : FragmentHomeBinding
@@ -27,6 +29,7 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = HomeFragmentAdapter(requireContext(), dataList)
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.setHasFixedSize(true)
+        val doctorData : List<Doctor> = DoctorDataSource().loadDoctors()
     }
 
     override fun toString(): String {
