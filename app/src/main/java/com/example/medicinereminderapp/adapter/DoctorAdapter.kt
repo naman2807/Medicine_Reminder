@@ -22,6 +22,6 @@ class DoctorAdapter(val context : Context, val dataList : List<Doctor>)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dataList.size
     }
 }
