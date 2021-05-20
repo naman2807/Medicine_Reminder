@@ -1,4 +1,4 @@
-package com.example.medicinereminderapp.data
+package com.example.medicinereminderapp.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
