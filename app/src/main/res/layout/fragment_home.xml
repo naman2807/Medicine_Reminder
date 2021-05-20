@@ -98,6 +98,14 @@
             app:layout_constraintStart_toStartOf="parent"
             style="?attr/textAppearanceHeadline4"/>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/doctor_list"
+            android:id="@+id/doctor_recycler_view"
+            android:layout_marginTop="20dp"
+            android:scrollbars="vertical"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
