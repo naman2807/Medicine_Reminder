@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.medicinereminderapp.adapter.DoctorAdapter
 import com.example.medicinereminderapp.adapter.HomeFragmentAdapter
 import com.example.medicinereminderapp.data.DoctorDataSource
 import com.example.medicinereminderapp.data.HomeDataSource
@@ -30,6 +31,7 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerView.setHasFixedSize(true)
         val doctorData : List<Doctor> = DoctorDataSource().loadDoctors()
+        doctorRecyclerView.adapter = DoctorAdapter(requireContext(), doctorData)
     }
 
     override fun toString(): String {
