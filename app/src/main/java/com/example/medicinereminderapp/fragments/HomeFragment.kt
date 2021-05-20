@@ -22,6 +22,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val recyclerView : RecyclerView = binding.recyclerView
+        val doctorRecyclerView : RecyclerView = binding.doctorRecyclerView
         val dataList : List<Categories> = HomeDataSource().loadItems()
         recyclerView.adapter = HomeFragmentAdapter(requireContext(), dataList)
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
