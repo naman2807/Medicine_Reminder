@@ -24,10 +24,21 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/text_doctor"
+                android:textAlignment="center"
+                android:id="@+id/text_doctor_name"
+                android:layout_margin="10dp"
                 style="?attr/textAppearanceHeadline5"/>
 
         </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/text_specialization"
+            android:textAlignment="center"
+            style="?attr/textAppearanceHeadline4"/>
+
 
     </LinearLayout>
 
