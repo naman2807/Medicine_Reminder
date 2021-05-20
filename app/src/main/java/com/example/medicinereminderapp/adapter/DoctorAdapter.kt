@@ -26,7 +26,7 @@ class DoctorAdapter(val context : Context, val dataList : List<Doctor>)
     }
 
     override fun onBindViewHolder(holder: DoctorViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = dataList[position]
     }
 
     override fun getItemCount(): Int {
