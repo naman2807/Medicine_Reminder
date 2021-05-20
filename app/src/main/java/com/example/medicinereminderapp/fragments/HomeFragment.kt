@@ -32,6 +32,7 @@ class HomeFragment : Fragment() {
         recyclerView.setHasFixedSize(true)
         val doctorData : List<Doctor> = DoctorDataSource().loadDoctors()
         doctorRecyclerView.adapter = DoctorAdapter(requireContext(), doctorData)
+        doctorRecyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 
     override fun toString(): String {
