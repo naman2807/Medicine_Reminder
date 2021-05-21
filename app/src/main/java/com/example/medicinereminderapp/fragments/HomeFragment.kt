@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         val doctorRecyclerView : RecyclerView = binding.doctorRecyclerView
         val dataList : List<Categories> = HomeDataSource().loadItems()
         recyclerView.adapter = HomeFragmentAdapter(requireContext(), dataList)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, true)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.setHasFixedSize(true)
         val doctorData : List<Doctor> = DoctorDataSource().loadDoctors()
         doctorRecyclerView.adapter = DoctorAdapter(requireContext(), doctorData)
