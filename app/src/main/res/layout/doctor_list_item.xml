@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/text_doctor_name"
                 android:layout_margin="10dp"
-                style="?attr/textAppearanceHeadline4"/>
+                style="@style/Headline4"/>
 
         </LinearLayout>
         <TextView
@@ -35,14 +35,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
             android:id="@+id/text_specialization"
-            style="?attr/textAppearanceHeadline5"/>
+            style="@style/HeadLine5"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/text_doctor_desc"
-            style="?attr/textAppearanceHeadline6"/>
+            style="@style/Headline6"/>
 
 
     </LinearLayout>

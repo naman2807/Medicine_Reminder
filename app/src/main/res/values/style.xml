@@ -7,4 +7,16 @@
         <item name="errorIconDrawable">@drawable/ic_baseline_error_outline_24</item>
         <item name="helperTextTextAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
     </style>
+
+    <style name="Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HeadLine5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textSize">15sp</item>
+    </style>
 </resources>
