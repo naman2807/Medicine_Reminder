@@ -112,6 +112,15 @@
         android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
+        <view
+            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="4"/>
+
+
+
+
 
 
     </LinearLayout>
