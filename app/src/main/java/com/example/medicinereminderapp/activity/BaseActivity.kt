@@ -1,11 +1,13 @@
 package com.example.medicinereminderapp.activity
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
@@ -27,6 +29,11 @@ class BaseActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
+
+        val animation : AnimationDrawable = findViewById<ConstraintLayout>(R.id.base_constraint).background as AnimationDrawable
+        animation.setEnterFadeDuration(1500)
+        animation.setExitFadeDuration(3000)
+        animation.start()
 
         //Sets the starting layout to Home page.
         viewModel.selectedFragment.value?.let {
