@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp.activity
 
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        val animation : AnimationDrawable = binding.root.background as AnimationDrawable
+        animation.setEnterFadeDuration(1500)
+        animation.setExitFadeDuration(3000)
+        animation.start()
     }
 
    fun login(view: View){

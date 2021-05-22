@@ -3,7 +3,7 @@
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android">
         <solid/>
-        <gradient android:startColor="#F3D6F3"
+        <gradient android:startColor="#F3C4F3"
             android:endColor="@color/white"
             android:angle="45"/>
     </shape>
