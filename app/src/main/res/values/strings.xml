@@ -60,4 +60,5 @@
     <string name="let_s_sign_you_in">Lets Sign You In</string>
     <string name="welcome_back_you_had_been_off_for_long_time">Welcome back! You had been off for long time</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="or">or</string>
 </resources>
