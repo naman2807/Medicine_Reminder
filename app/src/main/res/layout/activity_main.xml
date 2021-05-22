@@ -118,6 +118,12 @@
             android:layout_height="1dp"
             android:layout_weight="4"/>
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:layout_height="wrap_content"
+            android:text="@string/or"/>
 
         <view
             android:layout_gravity="center"
