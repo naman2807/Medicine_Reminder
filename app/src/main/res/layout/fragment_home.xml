@@ -14,14 +14,6 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp">
 
-        <RelativeLayout
-            android:id="@+id/abc"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="@drawable/gradient2"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
