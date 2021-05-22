@@ -61,4 +61,6 @@
     <string name="welcome_back_you_had_been_off_for_long_time">Welcome back! You had been off for long time</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="or">or</string>
+    <string name="dont_have_an_account">Dont have an account?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

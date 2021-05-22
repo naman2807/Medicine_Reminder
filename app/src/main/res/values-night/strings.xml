@@ -2,8 +2,10 @@
 <resources>
     <string name="categories">Categories</string>
     <string name="list_of_doctors">List Of Doctors</string>
-    <string name="let_s_sign_you_in">Let\'s Sign You In</string>
+    <string name="let_s_sign_you_in">Lets Sign You In</string>
     <string name="welcome_back_you_had_been_off_for_long_time">Welcome back! You had been off for long time</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="or">or</string>
+    <string name="dont_have_an_account">Dont have an account?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
