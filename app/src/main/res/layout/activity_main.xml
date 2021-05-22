@@ -9,19 +9,6 @@
     android:padding="20dp"
     tools:context=".activity.MainActivity">
 
-    <TextView
-        android:id="@+id/heading"
-        style="@style/TextAppearance.MaterialComponents.Headline5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:text="@string/Headline"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#5A07ED"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/main_image"
         android:layout_width="wrap_content"
@@ -30,7 +17,7 @@
         android:paddingTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mainimage" />
 
     <TextView
@@ -39,11 +26,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
-        android:text="@string/user_id"
+        android:text="@string/let_s_sign_you_in"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_image" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/welcome_back_you_had_been_off_for_long_time"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_id" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/user_id_text_layout"
@@ -51,13 +51,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/enter_your_user_id"
         app:errorIconDrawable="@drawable/ic_baseline_error_outline_24"
         app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_id">
+        app:layout_constraintTop_toBottomOf="@+id/info">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/user_id_edit_text"
@@ -68,17 +68,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/password"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="25sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_id_text_layout"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/user_id_password_layout"
@@ -92,7 +81,7 @@
         app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/user_id_text_layout"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -103,6 +92,16 @@
             android:maxLines="1"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/user_id_password_layout"
+        android:text="@string/forgot_password"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="5dp"/>
+
 
     <Button
         android:id="@+id/login_btn"

@@ -57,4 +57,7 @@
     <string name="want_advice_on_covid_19">Want advice on COVID-19</string>
     <string name="categories">Categories</string>
     <string name="list_of_doctors">List Of Doctors</string>
+    <string name="let_s_sign_you_in">Lets Sign You In</string>
+    <string name="welcome_back_you_had_been_off_for_long_time">Welcome back! You had been off for long time</string>
+    <string name="forgot_password">Forgot Password?</string>
 </resources>
