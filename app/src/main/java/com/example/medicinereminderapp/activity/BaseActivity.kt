@@ -30,11 +30,6 @@ class BaseActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
 
-        val animation : AnimationDrawable = findViewById<ConstraintLayout>(R.id.base_constraint).background as AnimationDrawable
-        animation.setEnterFadeDuration(1500)
-        animation.setExitFadeDuration(3000)
-        animation.start()
-
         //Sets the starting layout to Home page.
         viewModel.selectedFragment.value?.let {
             supportFragmentManager.beginTransaction().replace(R.id.fragment, it).commit()

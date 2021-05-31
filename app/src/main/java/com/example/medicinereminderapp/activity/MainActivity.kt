@@ -15,10 +15,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        val animation : AnimationDrawable = binding.root.background as AnimationDrawable
-        animation.setEnterFadeDuration(1500)
-        animation.setExitFadeDuration(3000)
-        animation.start()
     }
 
    fun login(view: View){

@@ -12,8 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/base_constraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/gradient_list">
+        android:layout_height="match_parent">
 
         <androidx.fragment.app.FragmentContainerView
             android:layout_width="match_parent"
