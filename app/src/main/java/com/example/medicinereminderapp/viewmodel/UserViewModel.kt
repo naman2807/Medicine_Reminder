@@ -20,6 +20,10 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
                 || userId.isBlank() || password.isBlank()
     }
 
+    fun isUserExists(userId: String): Boolean{
+
+    }
+
     fun addNewUser(name: String, address: String, phoneNumber: String, email:String,
                    userId: String, password: String){
 
