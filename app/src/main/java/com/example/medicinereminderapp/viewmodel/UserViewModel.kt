@@ -21,7 +21,7 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
     }
 
     fun isUserExists(userId: String): Boolean{
-
+        val user = userDao.getUser(userId)
     }
 
     fun addNewUser(name: String, address: String, phoneNumber: String, email:String,
