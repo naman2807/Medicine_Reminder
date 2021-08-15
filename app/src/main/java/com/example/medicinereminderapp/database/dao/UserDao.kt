@@ -1,9 +1,6 @@
 package com.example.medicinereminderapp.database.dao
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Update
+import androidx.room.*
 import com.example.medicinereminderapp.model.User
 import kotlinx.coroutines.flow.Flow
 
@@ -18,5 +15,6 @@ interface UserDao {
     @Delete
     suspend fun deleteUser(user: User)
 
+    @Query("SELECT * FROM user WHERE user_id = :userId")
     fun getUser(userId: String): Flow<User>
 }
