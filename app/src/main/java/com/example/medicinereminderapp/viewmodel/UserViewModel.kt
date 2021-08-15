@@ -23,5 +23,6 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
     fun addNewUser(name: String, address: String, phoneNumber: String, email:String,
                    userId: String, password: String){
 
+        addNewUser(User(name, address, phoneNumber, email, userId, password))
     }
 }
