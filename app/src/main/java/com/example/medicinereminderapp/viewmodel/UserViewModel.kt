@@ -1,4 +1,7 @@
 package com.example.medicinereminderapp.viewmodel
 
-class UserViewModel {
+import androidx.lifecycle.ViewModel
+import com.example.medicinereminderapp.database.dao.UserDao
+
+class UserViewModel(private val userDao: UserDao): ViewModel() {
 }
