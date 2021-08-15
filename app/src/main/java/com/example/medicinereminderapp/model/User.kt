@@ -1,4 +1,5 @@
 package com.example.medicinereminderapp.model
 
-class User {
-}
+data class User(
+    val name: String
+)
