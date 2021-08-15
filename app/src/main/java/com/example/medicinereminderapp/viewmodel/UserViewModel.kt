@@ -19,4 +19,9 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
         return name.isBlank() || address.isBlank() || phoneNumber.isBlank() || email.isBlank()
                 || userId.isBlank() || password.isBlank()
     }
+
+    fun addNewUser(name: String, address: String, phoneNumber: String, email:String,
+                   userId: String, password: String){
+
+    }
 }
