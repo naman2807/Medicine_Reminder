@@ -1,5 +1,8 @@
 package com.example.medicinereminderapp.model
 
+import androidx.room.Entity
+
+@Entity(tableName = "user")
 data class User(
     val name: String,
     val address: String,
