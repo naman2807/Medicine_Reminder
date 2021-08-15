@@ -1,13 +1,22 @@
 package com.example.medicinereminderapp.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "user")
 data class User(
-    val name: String,
-    val address: String,
-    val phoneNumber: String,
-    val email: String,
+    @ColumnInfo(name = "name")
+    val userName: String,
+    @ColumnInfo(name = "address")
+    val userAddress: String,
+    @ColumnInfo(name = "phone_number")
+    val userPhoneNumber: String,
+    @ColumnInfo(name = "email")
+    val userEmail: String,
+    @PrimaryKey
+    @ColumnInfo(name = "user_id")
     val userId: String,
-    val password: String
+    @ColumnInfo(name = "password")
+    val userPassword: String
 )
