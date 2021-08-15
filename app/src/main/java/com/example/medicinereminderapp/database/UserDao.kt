@@ -8,4 +8,5 @@ import com.example.medicinereminderapp.model.User
 interface UserDao {
     @Insert
     suspend fun addNewUser(user: User)
+    suspend fun updateUser(user: User)
 }
