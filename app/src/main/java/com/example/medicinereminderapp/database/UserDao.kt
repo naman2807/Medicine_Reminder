@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp.database
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import com.example.medicinereminderapp.model.User
 
@@ -9,5 +10,7 @@ interface UserDao {
     @Insert
     suspend fun addNewUser(user: User)
     suspend fun updateUser(user: User)
+
+    @Delete
     suspend fun deleteUser(user: User)
 }
