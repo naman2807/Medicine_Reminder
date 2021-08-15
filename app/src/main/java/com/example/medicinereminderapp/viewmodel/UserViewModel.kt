@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.medicinereminderapp.database.dao.UserDao
@@ -31,4 +32,15 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
 
         addNewUser(User(name, address, phoneNumber, email, userId, password))
     }
+}
+
+class UserViewModelFactory(private val userDao: UserDao): ViewModelProvider.Factory{
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return UserViewModel(userDao) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+
 }
