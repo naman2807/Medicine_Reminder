@@ -8,9 +8,14 @@ import kotlinx.coroutines.launch
 
 class UserViewModel(private val userDao: UserDao): ViewModel() {
 
-    fun addNewUser(user: User){
+    private fun addNewUser(user: User){
         viewModelScope.launch {
             userDao.addNewUser(user)
         }
+    }
+
+    fun isUserValid(name: String, address: String, phoneNumber: String, email:String,
+                userId: String, password: String): Boolean{
+
     }
 }
