@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.medicinereminderapp.database.dao.UserDao
 import com.example.medicinereminderapp.model.User
@@ -21,7 +22,8 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
     }
 
     fun isUserExists(userId: String): Boolean{
-        val user = userDao.getUser(userId)
+        val user = userDao.getUser(userId).asLiveData()
+        return user.value == null
     }
 
     fun addNewUser(name: String, address: String, phoneNumber: String, email:String,
