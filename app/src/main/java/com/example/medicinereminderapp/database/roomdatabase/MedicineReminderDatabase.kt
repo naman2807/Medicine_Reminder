@@ -1,4 +1,4 @@
 package com.example.medicinereminderapp.database.roomdatabase
 
-class MedicineReminderDatabase {
+abstract class MedicineReminderDatabase {
 }
