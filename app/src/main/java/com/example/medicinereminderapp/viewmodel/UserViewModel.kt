@@ -16,6 +16,7 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
 
     fun isUserValid(name: String, address: String, phoneNumber: String, email:String,
                 userId: String, password: String): Boolean{
-
+        return name.isBlank() || address.isBlank() || phoneNumber.isBlank() || email.isBlank()
+                || userId.isBlank() || password.isBlank()
     }
 }
