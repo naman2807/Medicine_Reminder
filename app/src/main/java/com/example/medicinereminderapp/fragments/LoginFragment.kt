@@ -58,6 +58,8 @@ class LoginFragment: Fragment() {
             }else{
                 binding.userIdPasswordLayout.error = getString(R.string.incorrectPassword)
             }
+        }else{
+            binding.userIdPasswordLayout.error = getString(R.string.incorrectId)
         }
     }
 
