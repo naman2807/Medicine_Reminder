@@ -1,11 +1,15 @@
 package com.example.medicinereminderapp.viewmodel
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.medicinereminderapp.database.dao.UserDao
 import com.example.medicinereminderapp.model.User
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class UserViewModel(private val userDao: UserDao): ViewModel() {
@@ -18,19 +22,22 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
 
     fun isUserValid(name: String, address: String, phoneNumber: String, email:String,
                 userId: String, password: String): Boolean{
-        return name.isBlank() || address.isBlank() || phoneNumber.isBlank() || email.isBlank()
-                || userId.isBlank() || password.isBlank()
-    }
-
-    fun isUserExists(userId: String): Boolean{
-        val user = userDao.getUser(userId).asLiveData()
-        return user.value == null
+        if(name.isBlank() || address.isBlank() || phoneNumber.isBlank() || email.isBlank()
+                || userId.isBlank() || password.isBlank()){
+            return false
+        }
+        return true
     }
 
     fun addNewUser(name: String, address: String, phoneNumber: String, email:String,
                    userId: String, password: String){
 
-        addNewUser(User(name, address, phoneNumber, email, userId, password))
+        addNewUser(User(userName = name, userAddress = address, userPhoneNumber = phoneNumber,userEmail = email,
+                userId = userId, userPassword = password))
+    }
+
+    fun findUser(userId: String):Flow<User>{
+
     }
 }
 

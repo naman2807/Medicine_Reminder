@@ -20,7 +20,7 @@ abstract class MedicineReminderDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     MedicineReminderDatabase::class.java,
-                    "medicine_reminder_database"
+                    "medicine_database"
                 )
                     .fallbackToDestructiveMigration()
                     .build()

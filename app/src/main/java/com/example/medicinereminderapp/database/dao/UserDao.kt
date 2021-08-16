@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addNewUser(user: User)
 
     @Update
@@ -15,6 +15,6 @@ interface UserDao {
     @Delete
     suspend fun deleteUser(user: User)
 
-    @Query("SELECT * FROM user WHERE user_id = :userId")
+    @Query("SELECT * FROM user_table WHERE user_id = :userId")
     fun getUser(userId: String): Flow<User>
 }

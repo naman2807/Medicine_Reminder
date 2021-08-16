@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/layout/activity_base.xml" value="0.17980072463768115" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/layout/fragment_appointment.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/layout/fragment_assertion.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/layout/login.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/layout/register.xml" value="0.17980072463768115" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/menu/nav_header_menu.xml" value="0.2755208333333333" />
