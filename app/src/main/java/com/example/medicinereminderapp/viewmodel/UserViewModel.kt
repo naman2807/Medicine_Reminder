@@ -2,10 +2,7 @@ package com.example.medicinereminderapp.viewmodel
 
 import android.util.Log
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.medicinereminderapp.database.dao.UserDao
 import com.example.medicinereminderapp.model.User
 import kotlinx.coroutines.currentCoroutineContext
@@ -36,8 +33,8 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
                 userId = userId, userPassword = password))
     }
 
-    fun findUser(userId: String):Flow<User>{
-       return userDao.getUser(userId)
+    fun findUser(userId: String):LiveData<User>{
+       return userDao.getUser(userId).asLiveData()
     }
 }
 

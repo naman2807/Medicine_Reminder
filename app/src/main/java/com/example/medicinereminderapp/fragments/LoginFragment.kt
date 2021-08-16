@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.asLiveData
 import com.example.medicinereminderapp.MedicineReminderApplication
 import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.activity.BaseActivity
@@ -47,6 +48,7 @@ class LoginFragment: Fragment() {
     }
 
     private fun validateUser(){
+        val userId = binding.userIdEditText.text.toString()
 
     }
 
