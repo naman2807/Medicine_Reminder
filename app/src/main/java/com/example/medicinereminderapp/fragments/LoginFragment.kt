@@ -52,6 +52,9 @@ class LoginFragment: Fragment() {
         val password = binding.userIdPasswordText.text.toString()
 
         val user = viewModel.findUser(userId)
+        if(user.value != null){
+
+        }
     }
 
 }
