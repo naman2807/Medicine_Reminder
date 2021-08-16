@@ -94,4 +94,9 @@ class BaseActivity : AppCompatActivity(){
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
+
 }

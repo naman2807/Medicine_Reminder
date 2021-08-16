@@ -2,11 +2,13 @@ package com.example.medicinereminderapp.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.example.medicinereminderapp.MedicineReminderApplication
 import com.example.medicinereminderapp.R
@@ -44,23 +46,34 @@ class LoginFragment: Fragment() {
         binding.loginBtn.setOnClickListener {
             validateUser()
         }
+
     }
 
-    private fun validateUser(){
+    override fun onResume() {
+        super.onResume()
+        binding.userIdPasswordLayout.error = null
+        binding.userIdTextLayout.error = null
+        binding.userIdEditText.text = null
+        binding.userIdPasswordText.text = null
+    }
+
+    private fun validateUser() {
         val userId = binding.userIdEditText.text.toString()
         val password = binding.userIdPasswordText.text.toString()
-
         val user = viewModel.findUser(userId)
-        if(user.value != null){
-            if(user.value?.userPassword.equals(password)){
+        user.observe(viewLifecycleOwner, { user ->
+            if (user?.userPassword.equals(password)) {
                 val intent = Intent(requireContext(), BaseActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                 startActivity(intent)
-            }else{
+            } else {
                 binding.userIdPasswordLayout.error = getString(R.string.incorrectPassword)
+                binding.userIdTextLayout.error = getString(R.string.incorrectId)
             }
-        }else{
-            binding.userIdPasswordLayout.error = getString(R.string.incorrectId)
-        }
+        })
+
     }
 
 }

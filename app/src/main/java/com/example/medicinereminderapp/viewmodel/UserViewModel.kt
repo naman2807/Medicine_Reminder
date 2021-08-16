@@ -33,7 +33,7 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
                 userId = userId, userPassword = password))
     }
 
-    fun findUser(userId: String):LiveData<User>{
+    fun findUser(userId: String): LiveData<User>{
        return userDao.getUser(userId).asLiveData()
     }
 }
