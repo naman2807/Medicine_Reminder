@@ -55,6 +55,8 @@ class LoginFragment: Fragment() {
             if(user.value?.userPassword.equals(password)){
                 val intent = Intent(requireContext(), BaseActivity::class.java)
                 startActivity(intent)
+            }else{
+                binding.userIdPasswordLayout.error = getString(R.string.incorrectPassword)
             }
         }
     }
