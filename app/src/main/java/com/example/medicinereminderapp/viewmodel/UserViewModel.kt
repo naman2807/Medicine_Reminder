@@ -37,7 +37,7 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
     }
 
     fun findUser(userId: String):Flow<User>{
-
+       return userDao.getUser(userId)
     }
 }
 
