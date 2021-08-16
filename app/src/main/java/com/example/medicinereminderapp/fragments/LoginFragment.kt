@@ -49,6 +49,7 @@ class LoginFragment: Fragment() {
 
     private fun validateUser(){
         val userId = binding.userIdEditText.text.toString()
+        val password = binding.userIdPasswordText.text.toString()
 
     }
 
