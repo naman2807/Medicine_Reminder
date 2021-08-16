@@ -42,7 +42,7 @@ class LoginFragment: Fragment() {
         }
 
         binding.loginBtn.setOnClickListener {
-
+            validateUser()
         }
     }
 
