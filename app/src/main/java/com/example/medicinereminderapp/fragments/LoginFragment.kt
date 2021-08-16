@@ -46,4 +46,8 @@ class LoginFragment: Fragment() {
         }
     }
 
+    private fun validateUser(){
+
+    }
+
 }
