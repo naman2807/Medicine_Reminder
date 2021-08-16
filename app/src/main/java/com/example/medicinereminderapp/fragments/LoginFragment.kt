@@ -42,8 +42,7 @@ class LoginFragment: Fragment() {
         }
 
         binding.loginBtn.setOnClickListener {
-            val intent = Intent(requireContext(), BaseActivity::class.java)
-            startActivity(intent)
+
         }
     }
 
@@ -54,7 +53,8 @@ class LoginFragment: Fragment() {
         val user = viewModel.findUser(userId)
         if(user.value != null){
             if(user.value?.userPassword.equals(password)){
-
+                val intent = Intent(requireContext(), BaseActivity::class.java)
+                startActivity(intent)
             }
         }
     }
