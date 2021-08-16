@@ -53,7 +53,9 @@ class LoginFragment: Fragment() {
 
         val user = viewModel.findUser(userId)
         if(user.value != null){
+            if(user.value?.userPassword.equals(password)){
 
+            }
         }
     }
 
