@@ -49,6 +49,9 @@ class LoginFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val userId = sharedPreferences?.getString(TAG, null)
+        if(userId == null){
+
+        }
         binding.signup.setOnClickListener {
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.mainFragment, RegisterFragment())?.commit()
         }
