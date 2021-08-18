@@ -21,7 +21,8 @@ import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
 
 class LoginFragment: Fragment() {
     private lateinit var binding: LoginBinding
-    val sharedPreferences: SharedPreferences? = null
+    private val sharedPreferences: SharedPreferences? = null
+    private val TAG = "USER_ID"
 
     private val viewModel: UserViewModel by activityViewModels {
         UserViewModelFactory(
