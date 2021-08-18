@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp.fragments
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -20,7 +21,7 @@ import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
 
 class LoginFragment: Fragment() {
     private lateinit var binding: LoginBinding
-
+    val sharedPreferences: SharedPreferences? = null
 
     private val viewModel: UserViewModel by activityViewModels {
         UserViewModelFactory(
