@@ -78,6 +78,8 @@ class LoginFragment: Fragment() {
         user.observe(viewLifecycleOwner, { user ->
             if (user?.userPassword.equals(password)) {
                 edit?.putString(TAG, user.userId)
+                edit?.apply()
+                edit?.commit()
                 startNewActivity()
             } else {
                 binding.userIdPasswordLayout.error = getString(R.string.incorrectPassword)

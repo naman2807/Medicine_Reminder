@@ -29,7 +29,6 @@ class BaseActivity : AppCompatActivity(){
     private val sharedPreferences: SharedPreferences? = getSharedPreferences("userid", Context.MODE_PRIVATE)
     private val edit: SharedPreferences.Editor? = sharedPreferences?.edit()
 
-
     private val viewModel : BaseActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +55,9 @@ class BaseActivity : AppCompatActivity(){
                 R.id.problem -> Toast.makeText(this, "Clicked problem", Toast.LENGTH_LONG).show()
                 R.id.share -> Toast.makeText(this, "Clicked share", Toast.LENGTH_LONG).show()
                 R.id.love_it -> Toast.makeText(this, "Clicked love it", Toast.LENGTH_LONG).show()
+                R.id.log_out -> {
+                    edit?.clear()
+                }
             }
            return@setNavigationItemSelectedListener true
         }
