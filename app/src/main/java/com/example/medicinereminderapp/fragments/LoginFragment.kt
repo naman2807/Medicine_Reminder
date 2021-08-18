@@ -77,11 +77,7 @@ class LoginFragment: Fragment() {
         user.observe(viewLifecycleOwner, { user ->
             if (user?.userPassword.equals(password)) {
                 edit?.putString(TAG, user.userId)
-                val intent = Intent(requireContext(), BaseActivity::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-                startActivity(intent)
+
             } else {
                 binding.userIdPasswordLayout.error = getString(R.string.incorrectPassword)
                 binding.userIdTextLayout.error = getString(R.string.incorrectId)
@@ -90,7 +86,11 @@ class LoginFragment: Fragment() {
     }
 
     private fun startNewActivity(){
-
+        val intent = Intent(requireContext(), BaseActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(intent)
     }
 
 }
