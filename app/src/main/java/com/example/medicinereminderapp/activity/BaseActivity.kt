@@ -57,6 +57,7 @@ class BaseActivity : AppCompatActivity(){
                 R.id.love_it -> Toast.makeText(this, "Clicked love it", Toast.LENGTH_LONG).show()
                 R.id.log_out -> {
                     edit?.clear()
+                    edit?.apply()
                 }
             }
            return@setNavigationItemSelectedListener true
