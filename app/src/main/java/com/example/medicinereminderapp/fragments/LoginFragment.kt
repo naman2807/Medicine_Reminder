@@ -71,6 +71,7 @@ class LoginFragment: Fragment() {
         val user = viewModel.findUser(userId)
         user.observe(viewLifecycleOwner, { user ->
             if (user?.userPassword.equals(password)) {
+                edit?.putString(TAG, user.userId)
                 val intent = Intent(requireContext(), BaseActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
