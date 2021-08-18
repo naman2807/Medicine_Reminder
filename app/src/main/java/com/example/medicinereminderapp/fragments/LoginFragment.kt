@@ -49,8 +49,8 @@ class LoginFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val userId = sharedPreferences?.getString(TAG, null)
-        if(userId == null){
-
+        if(userId != null){
+            startNewActivity()
         }
         binding.signup.setOnClickListener {
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.mainFragment, RegisterFragment())?.commit()
@@ -77,7 +77,7 @@ class LoginFragment: Fragment() {
         user.observe(viewLifecycleOwner, { user ->
             if (user?.userPassword.equals(password)) {
                 edit?.putString(TAG, user.userId)
-
+                startNewActivity()
             } else {
                 binding.userIdPasswordLayout.error = getString(R.string.incorrectPassword)
                 binding.userIdTextLayout.error = getString(R.string.incorrectId)
