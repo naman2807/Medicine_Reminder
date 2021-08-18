@@ -27,7 +27,7 @@ class BaseActivity : AppCompatActivity(){
     private lateinit var selectedFragment : Fragment
 
     private val sharedPreferences: SharedPreferences? = getSharedPreferences("userid", Context.MODE_PRIVATE)
-
+    private val edit: SharedPreferences.Editor? = sharedPreferences?.edit()
 
 
     private val viewModel : BaseActivityViewModel by viewModels()
