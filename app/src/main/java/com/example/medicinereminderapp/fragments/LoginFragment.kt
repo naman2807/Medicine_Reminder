@@ -87,6 +87,9 @@ class LoginFragment: Fragment() {
                 binding.userIdTextLayout.error = getString(R.string.incorrectId)
             }
         })
+    }
+
+    private fun startNewActivity(){
 
     }
 
