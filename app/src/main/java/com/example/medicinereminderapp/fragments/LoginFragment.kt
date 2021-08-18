@@ -1,5 +1,6 @@
 package com.example.medicinereminderapp.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -21,7 +22,12 @@ import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
 
 class LoginFragment: Fragment() {
     private lateinit var binding: LoginBinding
-    private val sharedPreferences: SharedPreferences? = null
+
+    private val sharedPreferences: SharedPreferences? =
+        activity?.getSharedPreferences("userid", Context.MODE_PRIVATE)
+
+    private val edit: SharedPreferences.Editor? = sharedPreferences?.edit()
+
     private val TAG = "USER_ID"
 
     private val viewModel: UserViewModel by activityViewModels {
