@@ -52,6 +52,7 @@ class LoginFragment: Fragment() {
         if(userId != null){
             startNewActivity()
         }
+
         binding.signup.setOnClickListener {
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.mainFragment, RegisterFragment())?.commit()
         }

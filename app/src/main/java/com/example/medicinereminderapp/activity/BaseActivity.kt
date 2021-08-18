@@ -1,5 +1,7 @@
 package com.example.medicinereminderapp.activity
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.view.MenuItem
@@ -23,6 +25,10 @@ class BaseActivity : AppCompatActivity(){
 //    Add toggle button to open NavigationView
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var selectedFragment : Fragment
+
+    private val sharedPreferences: SharedPreferences? = getSharedPreferences("userid", Context.MODE_PRIVATE)
+
+
 
     private val viewModel : BaseActivityViewModel by viewModels()
 
