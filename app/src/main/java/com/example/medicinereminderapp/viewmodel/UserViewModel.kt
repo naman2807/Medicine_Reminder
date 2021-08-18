@@ -28,7 +28,6 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
 
     fun addNewUser(name: String, address: String, phoneNumber: String, email:String,
                    userId: String, password: String){
-
         addNewUser(User(userName = name, userAddress = address, userPhoneNumber = phoneNumber,userEmail = email,
                 userId = userId, userPassword = password))
     }
@@ -36,6 +35,7 @@ class UserViewModel(private val userDao: UserDao): ViewModel() {
     fun findUser(userId: String): LiveData<User>{
        return userDao.getUser(userId).asLiveData()
     }
+
 }
 
 class UserViewModelFactory(private val userDao: UserDao): ViewModelProvider.Factory{

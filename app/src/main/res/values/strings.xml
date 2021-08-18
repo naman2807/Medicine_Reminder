@@ -65,4 +65,5 @@
     <string name="sign_up">Sign Up</string>
     <string name="incorrectPassword">Incorrect Password</string>
     <string name="incorrectId">Incorrect User Id</string>
+    <string name="log_out">Log Out</string>
 </resources>
