@@ -37,17 +37,6 @@ class RegisterActivity : AppCompatActivity() {
         name: String, address: String, phoneNumber: String, email: String,
         userId: String, password: String
     ) {
-//        if (viewModel.isUserValid(name, address, phoneNumber, email, userId, password)) {
-//            if (!viewModel.isUserExists(userId)) {
-//                viewModel.addNewUser(name, address, phoneNumber, email, userId, password)
-//                Toast.makeText(this, "User Added Successfully", Toast.LENGTH_SHORT).show()
-//            } else {
-//                Toast.makeText(this, "User Already Exists", Toast.LENGTH_SHORT).show()
-//            }
-//        } else {
-//            Toast.makeText(this, "Enter All Details", Toast.LENGTH_SHORT).show()
-//        }
-//    }
         viewModel.addNewUser(name, address, phoneNumber, email, userId, password)
         Toast.makeText(this, "User Added Successfully", Toast.LENGTH_SHORT).show()
     }

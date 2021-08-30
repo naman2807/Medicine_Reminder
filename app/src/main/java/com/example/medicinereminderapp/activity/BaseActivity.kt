@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -29,12 +30,14 @@ class BaseActivity : AppCompatActivity(){
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var selectedFragment : Fragment
 
-    private val sharedPreferences: SharedPreferences? = getSharedPreferences("userid", Context.MODE_PRIVATE)
-    private val edit: SharedPreferences.Editor? = sharedPreferences?.edit()
+
 
     private val viewModel : BaseActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences("login", Context.MODE_PRIVATE)
+        val edit: SharedPreferences.Editor? = sharedPreferences.edit()
+        Log.e("BaseActivity", sharedPreferences.getString("USER_ID","null").toString())
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
 
