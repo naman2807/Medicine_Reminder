@@ -1,4 +1,7 @@
 package com.example.medicinereminderapp.model
 
-data class Medicine {
+import androidx.room.Entity
+
+@Entity
+data class Medicine(val name: String)    {
 }
