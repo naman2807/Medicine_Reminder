@@ -17,4 +17,10 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
     fun addMedicine(name: String, doctorName: String){
         addNewMedicine(Medicine(name, doctorName))
     }
+
+    fun deleteMedicine(medicine: Medicine){
+        viewModelScope.launch {
+            medicineDao.deleteMedicine(medicine)
+        }
+    }
 }
