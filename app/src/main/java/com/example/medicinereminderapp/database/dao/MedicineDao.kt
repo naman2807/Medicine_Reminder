@@ -16,5 +16,8 @@ interface MedicineDao {
     suspend fun deleteMedicine(medicine: Medicine)
 
     @Query("SELECT * FROM medicine_table")
-    fun getAllMedicines(): Flow<Medicine>
+    fun getAllMedicines(): Flow<List<Medicine>>
+
+    @Query("SELECT * FROM medicine_table WHERE medicine_name = :medicineName")
+    fun getMedicine(medicineName: String): Flow<Medicine>
 }
