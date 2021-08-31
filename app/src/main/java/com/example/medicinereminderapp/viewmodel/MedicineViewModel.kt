@@ -13,4 +13,8 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
             medicineDao.addMedicine(medicine)
         }
     }
+
+    fun addMedicine(name: String, doctorName: String){
+
+    }
 }
