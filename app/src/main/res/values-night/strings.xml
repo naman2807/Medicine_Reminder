@@ -11,4 +11,6 @@
     <string name="incorrectPassword">Incorrect Password</string>
     <string name="incorrectId">Incorrect User Id</string>
     <string name="log_out">Log Out</string>
+    <string name="search_for_covid_19">Search For COVID-19</string>
+    <string name="click_here">Click Here</string>
 </resources>
