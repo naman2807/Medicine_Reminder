@@ -6,9 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.medicinereminderapp.database.dao.MedicineDao
 import com.example.medicinereminderapp.database.dao.UserDao
+import com.example.medicinereminderapp.model.Medicine
 import com.example.medicinereminderapp.model.User
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, Medicine::class], version = 2, exportSchema = false)
 abstract class MedicineReminderDatabase: RoomDatabase() {
     abstract fun getUserDao(): UserDao
     abstract fun getMedicineDao(): MedicineDao
