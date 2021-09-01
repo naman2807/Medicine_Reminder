@@ -68,4 +68,7 @@
     <string name="log_out">Log Out</string>
     <string name="search_for_covid_19">Search For COVID-19</string>
     <string name="click_here">Click Here</string>
+    <string name="add_new_reminder">Add New Reminder</string>
+    <string name="enter_medicine">Enter Medicine</string>
+    <string name="enter_doctor_s_name">Enter Doctor\'s Name</string>
 </resources>
