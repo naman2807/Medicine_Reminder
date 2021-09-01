@@ -10,4 +10,10 @@ data class Medicine(
     @ColumnInfo(name = "medicine_name")
     val name: String,
     @ColumnInfo(name = "doctor_name")
-    val doctorName: String)
+    val doctorName: String,
+    @ColumnInfo(name = "from_date")
+    val fromDate: String,
+    @ColumnInfo(name = "to_date")
+    val toDate: String,
+    @ColumnInfo(name = "time")
+    val time: String)
