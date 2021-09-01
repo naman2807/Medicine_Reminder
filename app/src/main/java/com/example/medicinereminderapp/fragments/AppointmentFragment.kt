@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.medicinereminderapp.R
+import com.example.medicinereminderapp.databinding.FragmentAppointmentBinding
 
 class AppointmentFragment : Fragment() {
+    private lateinit var binding: FragmentAppointmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val layout = inflater.inflate(R.layout.fragment_appointment, container, false)
-        return layout
+        binding = FragmentAppointmentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun toString(): String {
