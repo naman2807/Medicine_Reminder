@@ -71,4 +71,5 @@
     <string name="add_new_reminder">Add New Reminder</string>
     <string name="enter_medicine">Enter Medicine</string>
     <string name="enter_doctor_s_name">Enter Doctor\'s Name</string>
+    <string name="enter_start_date">Enter Start Date</string>
 </resources>

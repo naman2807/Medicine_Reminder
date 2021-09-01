@@ -59,7 +59,26 @@
             android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/from_date_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/doctor_input_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        style="@style/Widget.MedicineReminder.TextInputLayout.OutlinedBox"
+        app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:hint="@string/enter_start_date">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/from_date_input_text"
+            android:layout_width="match_parent"
+            android:drawableEnd="@drawable/ic_calender"
+            android:layout_height="48dp"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
