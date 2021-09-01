@@ -17,4 +17,7 @@
     <string name="enter_medicine">Enter Medicine</string>
     <string name="enter_doctor_s_name">Enter Doctor\'s Name</string>
     <string name="enter_start_date">Enter Start Date</string>
+    <string name="enter_end_date">Enter End Date</string>
+    <string name="enter_time_of_medicine">Enter Time of Medicine</string>
+    <string name="submit">Submit</string>
 </resources>
