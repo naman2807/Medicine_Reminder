@@ -104,7 +104,15 @@ class AppointmentFragment : Fragment() {
     }
 
     private fun addNewMedicine(){
+        if(!viewModel.isAnyFieldEmpty(
+                binding.medicineInputText.text.toString(),
+                binding.doctorInputText.text.toString(),
+                binding.fromDateInputText.text.toString(),
+                binding.toDateInputText.text.toString(),
+                binding.timeInputText.text.toString()
+        )){
 
+        }
     }
 
     private fun getMonth(number: Int): String{
