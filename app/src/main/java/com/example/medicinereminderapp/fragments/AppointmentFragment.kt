@@ -118,11 +118,11 @@ class AppointmentFragment : Fragment() {
             binding.timeInputText.text.toString()
         )
         }else{
-            binding.medicineInputText.error = "Enter Medicine Name"
-            binding.doctorInputText.error = "Enter Doctor's Name"
-            binding.fromDateInputText.error = "Enter Starting Date"
-            binding.toDateInputText.error = "Enter Ending Date"
-            binding.timeInputText.error = "Enter Time"
+            binding.medicineInputLayout.error = "Empty Field"
+            binding.doctorInputLayout.error = "Empty Field"
+            binding.fromDateInputLayout.error = "Empty Field"
+            binding.toDateInputLayout.error = "Empty Field"
+            binding.timeInputLayout.error = "Empty Field"
         }
     }
 
@@ -148,6 +148,15 @@ class AppointmentFragment : Fragment() {
 
     override fun toString(): String {
         return activity?.javaClass?.simpleName!!
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.medicineInputLayout.error = null
+        binding.doctorInputLayout.error = null
+        binding.fromDateInputLayout.error = null
+        binding.toDateInputLayout.error = null
+        binding.timeInputLayout.error = null
     }
 
     companion object{
