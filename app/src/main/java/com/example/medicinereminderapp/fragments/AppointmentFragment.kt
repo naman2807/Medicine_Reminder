@@ -103,6 +103,10 @@ class AppointmentFragment : Fragment() {
         ) }
     }
 
+    private fun addNewMedicine(){
+
+    }
+
     private fun getMonth(number: Int): String{
         val monthNumber = number + 1
         var monthToDisplay: String = ""
