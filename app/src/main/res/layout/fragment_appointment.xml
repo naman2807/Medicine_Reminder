@@ -16,8 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textSize="16sp"
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+        android:textSize="20sp"
+        android:textAppearance="@style/Headline4"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/medicine_input_layout"

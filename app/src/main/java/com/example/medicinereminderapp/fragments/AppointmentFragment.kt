@@ -19,6 +19,7 @@ class AppointmentFragment : Fragment() {
     val year = c.get(Calendar.YEAR)
     val month = c.get(Calendar.MONTH)
     val day = c.get(Calendar.DAY_OF_MONTH)
+    private lateinit var fromDate: String
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAppointmentBinding.inflate(inflater, container, false)
@@ -29,7 +30,7 @@ class AppointmentFragment : Fragment() {
         binding.fromDateInputText.setOnClickListener{
             val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 // Display Selected date in textbox
-                Toast.makeText(requireContext(), "" +  " " + monthOfYear + ", " + year, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "" + getMonth(monthOfYear) + " " + dayOfMonth + ", " +  year, Toast.LENGTH_SHORT).show()
 
             }, year, month, day)
 
@@ -38,7 +39,23 @@ class AppointmentFragment : Fragment() {
     }
 
     private fun getMonth(number: Int): String{
-
+        val monthNumber = number + 1
+        var monthToDisplay: String = ""
+        when(monthNumber){
+            1 -> monthToDisplay = Months.ONE.month
+            2 -> monthToDisplay = Months.TWO.month
+            3 -> monthToDisplay = Months.THREE.month
+            4 -> monthToDisplay = Months.FOUR.month
+            5 -> monthToDisplay = Months.FIVE.month
+            6 -> monthToDisplay = Months.SIX.month
+            7 -> monthToDisplay = Months.SEVEN.month
+            8 -> monthToDisplay = Months.EIGHT.month
+            9 -> monthToDisplay = Months.NINE.month
+            10 -> monthToDisplay = Months.TEN.month
+            11 -> monthToDisplay = Months.ELEVEN.month
+            12 -> monthToDisplay = Months.TWELVE.month
+        }
+        return monthToDisplay
     }
 
     override fun toString(): String {
