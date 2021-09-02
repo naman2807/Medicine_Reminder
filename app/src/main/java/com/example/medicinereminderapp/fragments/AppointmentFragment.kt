@@ -2,8 +2,10 @@ package com.example.medicinereminderapp.fragments
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -44,6 +46,10 @@ class AppointmentFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        sharedPreferences = activity?.getSharedPreferences("login", Context.MODE_PRIVATE)!!
+        val user = sharedPreferences.getString("USER_ID","null")!!
+        Log.e("Appointment", user)
+
         binding.fromDateInputText.setOnClickListener{
            DatePickerDialog(
                 requireContext(),
