@@ -35,7 +35,7 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
     }
 
     fun getAllMedicines(): Flow<List<Medicine>>{
-
+        return medicineDao.getAllMedicines()
     }
 }
 
