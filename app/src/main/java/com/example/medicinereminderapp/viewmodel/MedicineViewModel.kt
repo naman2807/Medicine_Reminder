@@ -16,7 +16,10 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
         }
     }
 
-    fun isEntryValid(): Boolean{
+    fun isEntryValid(userid: String, name: String, doctorName: String, fromDate: String,
+                     toDate: String, time: String): Boolean{
+        return userid.isBlank() || name.isBlank() || doctorName.isBlank() || fromDate.isBlank()
+                || toDate.isBlank() || time.isBlank()
 
     }
 
