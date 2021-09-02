@@ -23,7 +23,7 @@ import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
 import java.util.*
 import javax.xml.datatype.DatatypeConstants.MONTHS
 
-class AppointmentFragment : Fragment() {
+class AddMedicineReminderFragment : Fragment() {
     private lateinit var binding: FragmentAppointmentBinding
     val c = Calendar.getInstance()
     val year = c.get(Calendar.YEAR)

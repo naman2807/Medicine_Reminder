@@ -20,4 +20,6 @@
     <string name="enter_end_date">Enter End Date</string>
     <string name="enter_time_of_medicine">Enter Time of Medicine</string>
     <string name="submit">Submit</string>
+    <string name="medicine_name">Medicine Name:</string>
+    <string name="prescribed_by">Prescribed By:</string>
 </resources>
