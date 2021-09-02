@@ -1,6 +1,7 @@
 package com.example.medicinereminderapp.fragments
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,9 +20,8 @@ class AppointmentFragment : Fragment() {
     val year = c.get(Calendar.YEAR)
     val month = c.get(Calendar.MONTH)
     val day = c.get(Calendar.DAY_OF_MONTH)
-    private lateinit var fromDate: String
-    private lateinit var toDate: String
-    private lateinit var time: String
+    val hour = c.get(Calendar.HOUR_OF_DAY)
+    val minute = c.get(Calendar.MINUTE)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAppointmentBinding.inflate(inflater, container, false)
@@ -32,11 +32,31 @@ class AppointmentFragment : Fragment() {
         binding.fromDateInputText.setOnClickListener{
             val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
                 // Display Selected date in textbox
-                Toast.makeText(requireContext(), "" + getMonth(monthOfYear) + " " + dayOfMonth + ", " +  year, Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "" + getMonth(monthOfYear) + " " + dayOfMonth + ", " +  year, Toast.LENGTH_SHORT).show()
+                binding.fromDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
 
             }, year, month, day)
 
             dpd.show()
+        }
+
+        binding.toDateInputText.setOnClickListener{
+            val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                // Display Selected date in textbox
+//                Toast.makeText(requireContext(), "" + getMonth(monthOfYear) + " " + dayOfMonth + ", " +  year, Toast.LENGTH_SHORT).show()
+                binding.toDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
+
+            }, year, month, day)
+
+            dpd.show()
+        }
+
+        binding.timeInputText.setOnClickListener{
+            val time = TimePickerDialog(requireContext(), TimePickerDialog.OnTimeSetListener{view, hourOfDay, minuteOfDay ->
+                binding.timeInputText.setText("$hourOfDay : $minuteOfDay")
+            }, hour, minute, false)
+            time.setTitle("Set Medicine Time")
+            time.show()
         }
     }
 
