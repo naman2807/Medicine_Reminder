@@ -19,7 +19,11 @@ class ReminderListAdapter(private val onItemClicked: (Medicine) -> Unit):
     }
 
     override fun onBindViewHolder(holder: ReminderListAdapter.ReminderViewHolder, position: Int) {
-        TODO("Not yet implemented")
+       val medicine = getItem(position)
+        holder.itemView.setOnClickListener{
+            onItemClicked(medicine)
+        }
+        holder.bind(medicine)
     }
 
     class ReminderViewHolder(private val binding: ReminderLayoutBinding): RecyclerView.ViewHolder(binding.root){
