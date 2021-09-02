@@ -1,8 +1,6 @@
 package com.example.medicinereminderapp.viewmodel
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.medicinereminderapp.database.dao.MedicineDao
 import com.example.medicinereminderapp.database.dao.UserDao
 import com.example.medicinereminderapp.model.Medicine
@@ -34,8 +32,8 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
         }
     }
 
-    fun getAllMedicines(): Flow<List<Medicine>>{
-        return medicineDao.getAllMedicines()
+    fun getAllMedicines(): LiveData<List<Medicine>>{
+        return medicineDao.getAllMedicines().asLiveData()
     }
 }
 

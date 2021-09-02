@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medicinereminderapp.MedicineReminderApplication
 import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.adapter.ReminderListAdapter
@@ -35,8 +36,13 @@ class ReminderFragment : Fragment() {
         val adapter = ReminderListAdapter{}
 
         binding.reminderRecyclerView.adapter = adapter
+        binding.reminderRecyclerView.layoutManager = LinearLayoutManager(this.context)
 
-        viewModel.
+        viewModel.getAllMedicines().observe(this.viewLifecycleOwner){items ->
+            items.let {
+                adapter.submitList(it)
+            }
+        }
     }
 
 
