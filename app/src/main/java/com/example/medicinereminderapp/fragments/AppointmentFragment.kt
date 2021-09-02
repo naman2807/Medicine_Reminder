@@ -31,6 +31,7 @@ class AppointmentFragment : Fragment() {
     val day = c.get(Calendar.DAY_OF_MONTH)
     val hour = c.get(Calendar.HOUR_OF_DAY)
     val minute = c.get(Calendar.MINUTE)
+    private lateinit var user: String
 
     private val viewModel: MedicineViewModel by activityViewModels {
         MedicineViewModelFactory(
@@ -47,7 +48,7 @@ class AppointmentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         sharedPreferences = activity?.getSharedPreferences("login", Context.MODE_PRIVATE)!!
-        val user = sharedPreferences.getString("USER_ID","null")!!
+        user = sharedPreferences.getString("USER_ID","null")!!
         Log.e("Appointment", user)
 
         binding.fromDateInputText.setOnClickListener{
@@ -93,16 +94,12 @@ class AppointmentFragment : Fragment() {
             }
         }
 
-        binding.submit.setOnClickListener { v -> viewModel.addMedicine(
-            user,
-            binding.medicineInputText.text.toString(),
-            binding.doctorInputText.text.toString(),
-            binding.fromDateInputText.text.toString(),
-            binding.toDateInputText.text.toString(),
-            binding.timeInputText.text.toString()
-        ) }
+        binding.submit.setOnClickListener { addNewMedicine() }
     }
 
+    private fun isAnyFieldEmpty(){
+
+    }
     private fun addNewMedicine(){
         if(!viewModel.isAnyFieldEmpty(
                 binding.medicineInputText.text.toString(),
@@ -111,7 +108,14 @@ class AppointmentFragment : Fragment() {
                 binding.toDateInputText.text.toString(),
                 binding.timeInputText.text.toString()
         )){
-
+            viewModel.addMedicine(
+            user,
+            binding.medicineInputText.text.toString(),
+            binding.doctorInputText.text.toString(),
+            binding.fromDateInputText.text.toString(),
+            binding.toDateInputText.text.toString(),
+            binding.timeInputText.text.toString()
+        )
         }
     }
 
