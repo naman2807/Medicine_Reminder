@@ -21,6 +21,7 @@ class AppointmentFragment : Fragment() {
     val day = c.get(Calendar.DAY_OF_MONTH)
     private lateinit var fromDate: String
     private lateinit var toDate: String
+    private lateinit var time: String
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAppointmentBinding.inflate(inflater, container, false)
