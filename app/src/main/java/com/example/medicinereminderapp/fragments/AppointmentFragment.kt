@@ -9,8 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import com.example.medicinereminderapp.MedicineReminderApplication
 import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.databinding.FragmentAppointmentBinding
+import com.example.medicinereminderapp.viewmodel.MedicineViewModel
+import com.example.medicinereminderapp.viewmodel.MedicineViewModelFactory
+import com.example.medicinereminderapp.viewmodel.UserViewModel
+import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
 import java.util.*
 import javax.xml.datatype.DatatypeConstants.MONTHS
 
@@ -23,6 +29,12 @@ class AppointmentFragment : Fragment() {
     val hour = c.get(Calendar.HOUR_OF_DAY)
     val minute = c.get(Calendar.MINUTE)
 
+    private val viewModel: MedicineViewModel by activityViewModels {
+        MedicineViewModelFactory(
+            (activity?.application as MedicineReminderApplication).database.getMedicineDao()
+        )
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAppointmentBinding.inflate(inflater, container, false)
         return binding.root
@@ -30,33 +42,47 @@ class AppointmentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.fromDateInputText.setOnClickListener{
-            val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                // Display Selected date in textbox
-//                Toast.makeText(requireContext(), "" + getMonth(monthOfYear) + " " + dayOfMonth + ", " +  year, Toast.LENGTH_SHORT).show()
-                binding.fromDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
+           DatePickerDialog(
+                requireContext(),
+                { view, year, monthOfYear, dayOfMonth ->
+                    binding.fromDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
 
-            }, year, month, day)
-
-            dpd.show()
+                },
+                year,
+                month,
+                day
+            ).apply {
+                show()
+            }
         }
 
         binding.toDateInputText.setOnClickListener{
-            val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                // Display Selected date in textbox
-//                Toast.makeText(requireContext(), "" + getMonth(monthOfYear) + " " + dayOfMonth + ", " +  year, Toast.LENGTH_SHORT).show()
+           DatePickerDialog(
+               requireContext(),
+               { year, view, monthOfYear, dayOfMonth ->
                 binding.toDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
-
-            }, year, month, day)
-
-            dpd.show()
+               },
+               year,
+               month,
+               day
+           ).apply {
+               show()
+            }
         }
 
         binding.timeInputText.setOnClickListener{
-            val time = TimePickerDialog(requireContext(), TimePickerDialog.OnTimeSetListener{view, hourOfDay, minuteOfDay ->
+            TimePickerDialog(
+                requireContext(),
+                { view, hourOfDay, minuteOfDay ->
                 binding.timeInputText.setText("$hourOfDay : $minuteOfDay")
-            }, hour, minute, false)
-            time.setTitle("Set Medicine Time")
-            time.show()
+                },
+                hour,
+                minute,
+                false
+            ).apply {
+                setTitle("Set Medicine Time")
+                show()
+            }
         }
     }
 
