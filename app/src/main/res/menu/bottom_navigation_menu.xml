@@ -5,15 +5,16 @@
         android:id="@+id/bottom_home"
         android:icon="@drawable/ic_home"
         android:title="@string/home"/>
+
+    <item
+        android:id="@+id/add_reminder"
+        android:icon="@drawable/ic_add_reminder"
+        android:title="@string/add_reminder"/>
+
     <item
         android:id="@+id/reminder"
         android:icon="@drawable/ic_baseline_reminder"
         android:title="@string/reminders"/>
-
-    <item
-        android:id="@+id/appointment"
-        android:icon="@drawable/ic_baseline_appointment"
-        android:title="@string/appointments"/>
 
     <item
         android:id="@+id/reports"

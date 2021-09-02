@@ -22,4 +22,6 @@
     <string name="submit">Submit</string>
     <string name="medicine_name">Medicine Name:</string>
     <string name="prescribed_by">Prescribed By:</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="reminders">Reminders</string>
 </resources>

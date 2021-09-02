@@ -17,7 +17,6 @@
     <string name="report_a_problem">Report a problem</string>
     <string name="share_app">Share App</string>
     <string name="love_it">Love It</string>
-    <string name="reminders">Reminders</string>
     <string name="appointments">Appointments</string>
     <string name="reports">Reports</string>
     <string name="name">Name</string>
@@ -77,4 +76,6 @@
     <string name="submit">Submit</string>
     <string name="medicine_name">Medicine Name:</string>
     <string name="prescribed_by">Prescribed By:</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="reminders">Reminders</string>
 </resources>
