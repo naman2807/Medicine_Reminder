@@ -1,5 +1,6 @@
 package com.example.medicinereminderapp.adapter
 
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,7 @@ class ReminderListAdapter(private val onItemClicked: (Medicine) -> Unit):
         parent: ViewGroup,
         viewType: Int
     ): ReminderListAdapter.ReminderViewHolder {
-        TODO("Not yet implemented")
+        return ReminderViewHolder(ReminderLayoutBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: ReminderListAdapter.ReminderViewHolder, position: Int) {
