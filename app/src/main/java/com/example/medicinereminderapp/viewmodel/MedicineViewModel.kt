@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.medicinereminderapp.database.dao.MedicineDao
 import com.example.medicinereminderapp.database.dao.UserDao
 import com.example.medicinereminderapp.model.Medicine
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
@@ -31,6 +32,10 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
         viewModelScope.launch {
             medicineDao.deleteMedicine(medicine)
         }
+    }
+
+    fun getAllMedicines(): Flow<List<Medicine>>{
+
     }
 }
 

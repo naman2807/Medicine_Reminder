@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import com.example.medicinereminderapp.MedicineReminderApplication
 import com.example.medicinereminderapp.R
+import com.example.medicinereminderapp.adapter.ReminderListAdapter
 import com.example.medicinereminderapp.databinding.FragmentReminderBinding
 import com.example.medicinereminderapp.viewmodel.MedicineViewModel
 import com.example.medicinereminderapp.viewmodel.MedicineViewModelFactory
@@ -31,6 +32,11 @@ class ReminderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val adapter = ReminderListAdapter{}
+
+        binding.reminderRecyclerView.adapter = adapter
+
+        viewModel.
     }
 
 
