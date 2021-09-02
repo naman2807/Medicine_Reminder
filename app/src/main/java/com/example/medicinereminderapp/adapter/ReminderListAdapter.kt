@@ -2,6 +2,7 @@ package com.example.medicinereminderapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicinereminderapp.databinding.FragmentReminderBinding
@@ -9,7 +10,7 @@ import com.example.medicinereminderapp.databinding.ReminderLayoutBinding
 import com.example.medicinereminderapp.model.Medicine
 
 class ReminderListAdapter(private val onItemClicked: (Medicine) -> Unit):
-        ListAdapter<Medicine, ReminderListAdapter.ReminderViewHolder>(DiffCallBack){
+        ListAdapter<Medicine, ReminderListAdapter.ReminderViewHolder>(DiffCallback){
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -31,6 +32,18 @@ class ReminderListAdapter(private val onItemClicked: (Medicine) -> Unit):
             binding.apply {
                 medicineReminder.text = medicine.name
                 doctorName.text = medicine.doctorName
+            }
+        }
+    }
+
+    companion object {
+        private val DiffCallback = object : DiffUtil.ItemCallback<Medicine>() {
+            override fun areItemsTheSame(oldItem: Medicine, newItem: Medicine): Boolean {
+                return oldItem === newItem
+            }
+
+            override fun areContentsTheSame(oldItem: Medicine, newItem: Medicine): Boolean {
+                return oldItem.name == newItem.name
             }
         }
     }
