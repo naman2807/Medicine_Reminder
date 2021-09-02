@@ -16,6 +16,10 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
         }
     }
 
+    fun isEntryValid(): Boolean{
+
+    }
+
     fun addMedicine(userid: String, name: String, doctorName: String, fromDate: String, toDate: String, time: String){
         addNewMedicine(Medicine(userid, name, doctorName, fromDate, toDate, time))
     }

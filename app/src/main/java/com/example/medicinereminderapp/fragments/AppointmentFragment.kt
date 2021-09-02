@@ -55,7 +55,6 @@ class AppointmentFragment : Fragment() {
                 requireContext(),
                 { view, year, monthOfYear, dayOfMonth ->
                     binding.fromDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
-
                 },
                 year,
                 month,
@@ -68,8 +67,8 @@ class AppointmentFragment : Fragment() {
         binding.toDateInputText.setOnClickListener{
            DatePickerDialog(
                requireContext(),
-               { year, view, monthOfYear, dayOfMonth ->
-                binding.toDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
+               { view, year, monthOfYear, dayOfMonth ->
+                   binding.toDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
                },
                year,
                month,
