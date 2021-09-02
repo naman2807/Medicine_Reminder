@@ -97,17 +97,18 @@ class AppointmentFragment : Fragment() {
         binding.submit.setOnClickListener { addNewMedicine() }
     }
 
-    private fun isAnyFieldEmpty(){
-
+    private fun isAnyFieldEmpty(): Boolean{
+        return viewModel.isAnyFieldEmpty(
+            binding.medicineInputText.text.toString(),
+            binding.doctorInputText.text.toString(),
+            binding.fromDateInputText.text.toString(),
+            binding.toDateInputText.text.toString(),
+            binding.timeInputText.text.toString()
+        )
     }
+
     private fun addNewMedicine(){
-        if(!viewModel.isAnyFieldEmpty(
-                binding.medicineInputText.text.toString(),
-                binding.doctorInputText.text.toString(),
-                binding.fromDateInputText.text.toString(),
-                binding.toDateInputText.text.toString(),
-                binding.timeInputText.text.toString()
-        )){
+        if(!isAnyFieldEmpty()){
             viewModel.addMedicine(
             user,
             binding.medicineInputText.text.toString(),
@@ -116,6 +117,12 @@ class AppointmentFragment : Fragment() {
             binding.toDateInputText.text.toString(),
             binding.timeInputText.text.toString()
         )
+        }else{
+            binding.medicineInputText.error = "Enter Medicine Name"
+            binding.doctorInputText.error = "Enter Doctor's Name"
+            binding.fromDateInputText.error = "Enter Starting Date"
+            binding.toDateInputText.error = "Enter Ending Date"
+            binding.timeInputText.error = "Enter Time"
         }
     }
 
