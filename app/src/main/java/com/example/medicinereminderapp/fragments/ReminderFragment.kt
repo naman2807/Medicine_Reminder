@@ -9,12 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.medicinereminderapp.R
+import com.example.medicinereminderapp.databinding.FragmentReminderBinding
 
 class ReminderFragment : Fragment() {
+    private var _binding : FragmentReminderBinding? = null
+    private val  binding get()  = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val layout = inflater.inflate(R.layout.fragment_reminder, container, false)
-        return layout
+        _binding = FragmentReminderBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 
