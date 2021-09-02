@@ -23,6 +23,8 @@ class ReminderListAdapter(private val onItemClicked: (Medicine) -> Unit):
     }
 
     class ReminderViewHolder(private val binding: ReminderLayoutBinding): RecyclerView.ViewHolder(binding.root){
+        fun bind(medicine: Medicine){
 
+        }
     }
 }
