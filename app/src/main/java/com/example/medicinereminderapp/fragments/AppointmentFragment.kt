@@ -93,6 +93,15 @@ class AppointmentFragment : Fragment() {
                 show()
             }
         }
+
+        binding.submit.setOnClickListener { v -> viewModel.addMedicine(
+            user,
+            binding.medicineInputText.text.toString(),
+            binding.doctorInputText.text.toString(),
+            binding.fromDateInputText.text.toString(),
+            binding.toDateInputText.text.toString(),
+            binding.timeInputText.text.toString()
+        ) }
     }
 
     private fun getMonth(number: Int): String{

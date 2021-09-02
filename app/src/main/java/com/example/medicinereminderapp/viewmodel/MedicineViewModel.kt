@@ -16,8 +16,8 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
         }
     }
 
-    fun addMedicine(name: String, doctorName: String, fromDate: String, toDate: String, time: String){
-        addNewMedicine(Medicine(name, doctorName, fromDate, toDate, time))
+    fun addMedicine(userid: String, name: String, doctorName: String, fromDate: String, toDate: String, time: String){
+        addNewMedicine(Medicine(userid, name, doctorName, fromDate, toDate, time))
     }
 
     fun deleteMedicine(medicine: Medicine){
