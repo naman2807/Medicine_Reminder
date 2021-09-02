@@ -2,6 +2,7 @@ package com.example.medicinereminderapp.fragments
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -34,6 +35,8 @@ class AppointmentFragment : Fragment() {
             (activity?.application as MedicineReminderApplication).database.getMedicineDao()
         )
     }
+
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAppointmentBinding.inflate(inflater, container, false)
