@@ -1,8 +1,10 @@
 package com.example.medicinereminderapp.fragments
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -20,11 +22,13 @@ import com.example.medicinereminderapp.viewmodel.MedicineViewModel
 import com.example.medicinereminderapp.viewmodel.MedicineViewModelFactory
 import com.example.medicinereminderapp.viewmodel.UserViewModel
 import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
+import com.google.android.material.bottomnavigation.BottomNavigationMenu
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.xml.datatype.DatatypeConstants.MONTHS
 
-class AddMedicineReminderFragment : Fragment() {
+class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView) : Fragment() {
     private lateinit var binding: FragmentAppointmentBinding
     val c = Calendar.getInstance()
     var year = c.get(Calendar.YEAR)
@@ -128,6 +132,10 @@ class AddMedicineReminderFragment : Fragment() {
             binding.toDateInputText.text.toString(),
             binding.timeInputText.text.toString()
         )
+            Toast.makeText(requireContext(),"Reminder Added Successfully",Toast.LENGTH_SHORT).show()
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment, ReminderFragment())?.commit()
+            bottomNavigationView.selectedItemId = R.id.reminder
+
         }else{
             binding.medicineInputLayout.error = "Empty Field"
             binding.doctorInputLayout.error = "Empty Field"

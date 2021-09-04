@@ -82,7 +82,7 @@ class BaseActivity : AppCompatActivity(){
                      viewModel.selectFragment(selectedFragment)
                  }
                  R.id.add_reminder -> {
-                     selectedFragment = AddMedicineReminderFragment()
+                     selectedFragment = AddMedicineReminderFragment(bottomNav)
                      viewModel.selectFragment(selectedFragment)
                  }
                  R.id.reports -> {
