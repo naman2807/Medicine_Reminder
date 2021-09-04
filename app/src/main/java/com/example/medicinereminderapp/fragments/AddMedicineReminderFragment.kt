@@ -31,9 +31,9 @@ import javax.xml.datatype.DatatypeConstants.MONTHS
 class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView) : Fragment() {
     private lateinit var binding: FragmentAppointmentBinding
     val c = Calendar.getInstance()
-    var year = c.get(Calendar.YEAR)
-    var month = c.get(Calendar.MONTH)
-    var day = c.get(Calendar.DAY_OF_MONTH)
+    val year = c.get(Calendar.YEAR)
+    val month = c.get(Calendar.MONTH)
+    val day = c.get(Calendar.DAY_OF_MONTH)
     val hour = c.get(Calendar.HOUR_OF_DAY)
     val minute = c.get(Calendar.MINUTE)
     private lateinit var user: String
@@ -135,7 +135,6 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
             Toast.makeText(requireContext(),"Reminder Added Successfully",Toast.LENGTH_SHORT).show()
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment, ReminderFragment())?.commit()
             bottomNavigationView.selectedItemId = R.id.reminder
-
         }else{
             binding.medicineInputLayout.error = "Empty Field"
             binding.doctorInputLayout.error = "Empty Field"

@@ -33,11 +33,11 @@ class ReminderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ReminderListAdapter{}
+        val adapter = ReminderListAdapter{
 
+        }
         binding.reminderRecyclerView.adapter = adapter
         binding.reminderRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-//        binding.reminderRecyclerView.setHasFixedSize(true)
 
         viewModel.getAllMedicines().observe(this.viewLifecycleOwner){items ->
             items.let {

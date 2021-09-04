@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Medicine Reminder App</string>
+    <string name="app_name">Medicine Reminder</string>
     <string name="Headline">Time is generally the best doctor.</string>
     <string name="user_id">User ID:</string>
     <string name="enter_your_user_id">Enter Your User ID</string>
