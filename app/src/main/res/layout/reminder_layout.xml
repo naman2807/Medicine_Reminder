@@ -33,17 +33,4 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="$4.99" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/item_quantity"-->
-<!--        style="@style/Widget.Medicine.ListItemTextView"-->
-<!--        android:layout_width="80dp"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginEnd="@dimen/margin_between_elements"-->
-<!--        android:fontFamily="sans-serif-medium"-->
-<!--        android:textAlignment="center"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_weight="1"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        tools:text="3" />-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

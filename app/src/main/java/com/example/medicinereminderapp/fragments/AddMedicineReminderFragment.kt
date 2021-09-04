@@ -20,15 +20,16 @@ import com.example.medicinereminderapp.viewmodel.MedicineViewModel
 import com.example.medicinereminderapp.viewmodel.MedicineViewModelFactory
 import com.example.medicinereminderapp.viewmodel.UserViewModel
 import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
+import java.text.SimpleDateFormat
 import java.util.*
 import javax.xml.datatype.DatatypeConstants.MONTHS
 
 class AddMedicineReminderFragment : Fragment() {
     private lateinit var binding: FragmentAppointmentBinding
     val c = Calendar.getInstance()
-    val year = c.get(Calendar.YEAR)
-    val month = c.get(Calendar.MONTH)
-    val day = c.get(Calendar.DAY_OF_MONTH)
+    var year = c.get(Calendar.YEAR)
+    var month = c.get(Calendar.MONTH)
+    var day = c.get(Calendar.DAY_OF_MONTH)
     val hour = c.get(Calendar.HOUR_OF_DAY)
     val minute = c.get(Calendar.MINUTE)
     private lateinit var user: String
@@ -55,7 +56,7 @@ class AddMedicineReminderFragment : Fragment() {
            DatePickerDialog(
                 requireContext(),
                 { view, year, monthOfYear, dayOfMonth ->
-                    binding.fromDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
+                    binding.fromDateInputText.setText("$dayOfMonth/$monthOfYear/$year")
                 },
                 year,
                 month,
@@ -69,7 +70,7 @@ class AddMedicineReminderFragment : Fragment() {
            DatePickerDialog(
                requireContext(),
                { view, year, monthOfYear, dayOfMonth ->
-                   binding.toDateInputText.setText("${getMonth(monthOfYear)} $dayOfMonth, $year")
+                   binding.toDateInputText.setText("$dayOfMonth/$monthOfYear/$year")
                },
                year,
                month,
@@ -94,7 +95,17 @@ class AddMedicineReminderFragment : Fragment() {
             }
         }
 
-        binding.submit.setOnClickListener { addNewMedicine() }
+        binding.submit.setOnClickListener {
+            val fromDate : SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val frDate = fromDate.parse(binding.fromDateInputText.text.toString())
+            val toDate : SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val tDate = toDate.parse(binding.toDateInputText.text.toString())
+            if(tDate.before(frDate)){
+                binding.toDateInputLayout.error = "Enter Valid Date"
+            }else{
+                addNewMedicine()
+            }
+        }
     }
 
     private fun isAnyFieldEmpty(): Boolean{
