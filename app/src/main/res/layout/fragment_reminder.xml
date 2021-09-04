@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.ReminderFragment"
-    android:padding="20dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/reminder_text"
@@ -18,14 +16,47 @@
         android:text="@string/reminders"
         android:textSize="20sp"
         style="?attr/textAppearanceBody1"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
         android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/item_name"
+        style="@style/Widget.Medicine.Header"
+        android:layout_marginStart="@dimen/margin_between_elements"
+        android:text="@string/medicine_name"
+        app:layout_constraintEnd_toStartOf="@+id/item_price"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminder_text"/>
+
+    <TextView
+        android:id="@+id/item_price"
+        style="@style/Widget.Medicine.Header"
+        android:layout_below="@+id/item_name"
+        android:layout_marginStart="@dimen/margin_between_elements"
+        android:text="@string/prescribed_by"
+        android:textAlignment="center"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/item_name"
+        app:layout_constraintTop_toBottomOf="@+id/reminder_text" />
+
+    <View
+        android:id="@+id/divider"
+        style="@style/Divider"
+        android:layout_marginTop="@dimen/margin_between_elements"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_name"
+        app:layout_constraintBottom_toTopOf="@+id/reminder_recycler_view"/>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reminder_recycler_view"
         android:layout_width="match_parent"
+        android:scrollbars="vertical"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/reminder_text"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="10dp"/>
 

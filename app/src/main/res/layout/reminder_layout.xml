@@ -1,68 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:descendantFocusability="blocksDescendants">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp">
+    <TextView
+        android:id="@+id/medicine_reminder"
+        style="@style/Widget.Medicine.ListItemTextView"
+        android:layout_width="180dp"
+        android:layout_marginStart="@dimen/margin_between_elements"
+        android:fontFamily="sans-serif"
+        android:paddingStart="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Paracetamol" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/doctor_name"
+        style="@style/Widget.Medicine.ListItemTextView"
+        android:layout_width="150dp"
+        android:layout_below="@+id/medicine_reminder"
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center"
+        android:paddingLeft="60dp"
+        app:layout_constraintStart_toEndOf="@+id/medicine_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="$4.99" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/medicine_name"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:id="@+id/item_quantity"-->
+<!--        style="@style/Widget.Medicine.ListItemTextView"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="@dimen/margin_between_elements"-->
+<!--        android:fontFamily="sans-serif-medium"-->
+<!--        android:textAlignment="center"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_weight="1"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:text="3" />-->
 
-            <TextView
-                android:id="@+id/medicine_reminder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textSize="11sp"
-                app:text="Sample"
-                android:padding="10dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="@string/prescribed_by"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textSize="15sp"
-                android:paddingStart="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/doctor_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceBody1"
-                android:textSize="9sp"
-                app:text="Sample"
-                android:padding="10dp"/>
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
