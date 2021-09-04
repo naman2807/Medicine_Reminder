@@ -78,4 +78,5 @@
     <string name="prescribed_by">Prescribed By:</string>
     <string name="add_reminder">Add Reminder</string>
     <string name="reminders">Reminders</string>
+    <string name="edit_reminder">Edit Reminder</string>
 </resources>

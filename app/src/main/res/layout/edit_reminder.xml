@@ -1,6 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/edit_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        android:textAppearance="@style/Headline4"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/medicine_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/heading"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:errorIconDrawable="@drawable/ic_baseline_error_outline_24"
+        android:layout_margin="8dp"
+        style="@style/Widget.MedicineReminder.TextInputLayout.OutlinedBox"
+        app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:hint="@string/enter_medicine">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/medicine_input_text"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/doctor_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/medicine_input_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:errorIconDrawable="@drawable/ic_baseline_error_outline_24"
+        android:layout_margin="8dp"
+        style="@style/Widget.MedicineReminder.TextInputLayout.OutlinedBox"
+        app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:hint="@string/enter_doctor_s_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/doctor_input_text"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/from_date_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/doctor_input_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        app:errorIconDrawable="@drawable/ic_baseline_error_outline_24"
+        style="@style/Widget.MedicineReminder.TextInputLayout.OutlinedBox"
+        app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:hint="@string/enter_start_date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/from_date_input_text"
+            android:layout_width="match_parent"
+            android:drawableEnd="@drawable/ic_calender"
+            android:layout_height="48dp"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/to_date_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/from_date_input_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        app:errorIconDrawable="@drawable/ic_baseline_error_outline_24"
+        style="@style/Widget.MedicineReminder.TextInputLayout.OutlinedBox"
+        app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:hint="@string/enter_end_date">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/to_date_input_text"
+            android:layout_width="match_parent"
+            android:drawableEnd="@drawable/ic_calender"
+            android:layout_height="48dp"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/time_input_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/to_date_input_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        app:errorIconDrawable="@drawable/ic_baseline_error_outline_24"
+        style="@style/Widget.MedicineReminder.TextInputLayout.OutlinedBox"
+        app:helperTextTextAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:hint="@string/enter_time_of_medicine">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/time_input_text"
+            android:layout_width="match_parent"
+            android:drawableEnd="@drawable/ic_time"
+            android:layout_height="48dp"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/time_input_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/submit"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
