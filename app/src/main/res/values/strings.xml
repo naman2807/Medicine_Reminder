@@ -79,4 +79,5 @@
     <string name="add_reminder">Add Reminder</string>
     <string name="reminders">Reminders</string>
     <string name="edit_reminder">Edit Reminder</string>
+    <string name="update">UPDATE</string>
 </resources>

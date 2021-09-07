@@ -4,10 +4,8 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,13 +18,9 @@ import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.databinding.FragmentAppointmentBinding
 import com.example.medicinereminderapp.viewmodel.MedicineViewModel
 import com.example.medicinereminderapp.viewmodel.MedicineViewModelFactory
-import com.example.medicinereminderapp.viewmodel.UserViewModel
-import com.example.medicinereminderapp.viewmodel.UserViewModelFactory
-import com.google.android.material.bottomnavigation.BottomNavigationMenu
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.text.SimpleDateFormat
 import java.util.*
-import javax.xml.datatype.DatatypeConstants.MONTHS
 
 class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView) : Fragment() {
     private lateinit var binding: FragmentAppointmentBinding
@@ -37,14 +31,13 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
     val hour = c.get(Calendar.HOUR_OF_DAY)
     val minute = c.get(Calendar.MINUTE)
     private lateinit var user: String
+    private lateinit var sharedPreferences: SharedPreferences
 
     private val viewModel: MedicineViewModel by activityViewModels {
         MedicineViewModelFactory(
             (activity?.application as MedicineReminderApplication).database.getMedicineDao()
         )
     }
-
-    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentAppointmentBinding.inflate(inflater, container, false)
@@ -54,7 +47,6 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         sharedPreferences = activity?.getSharedPreferences("login", Context.MODE_PRIVATE)!!
         user = sharedPreferences.getString("USER_ID","null")!!
-        Log.e("Appointment", user)
 
         binding.fromDateInputText.setOnClickListener{
            DatePickerDialog(

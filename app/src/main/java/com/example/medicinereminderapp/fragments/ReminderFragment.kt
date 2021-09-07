@@ -25,6 +25,7 @@ class ReminderFragment : Fragment() {
         MedicineViewModelFactory(
             (activity?.application as MedicineReminderApplication).database.getMedicineDao())
     }
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentReminderBinding.inflate(inflater, container, false)
@@ -33,13 +34,17 @@ class ReminderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedPreferences = activity?.getSharedPreferences("login", Context.MODE_PRIVATE)!!
+        val user = sharedPreferences.getString("USER_ID","null")!!
         val adapter = ReminderListAdapter{
-
+            activity?.supportFragmentManager?.beginTransaction()?.
+                            replace(R.id.fragment, EditReminderFragment(it))?.commit()
         }
+
         binding.reminderRecyclerView.adapter = adapter
         binding.reminderRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
-        viewModel.getAllMedicines().observe(this.viewLifecycleOwner){items ->
+        viewModel.getAllMedicines(user).observe(this.viewLifecycleOwner){items ->
             items.let {
                 adapter.submitList(it)
             }

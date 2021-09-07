@@ -32,8 +32,18 @@ class MedicineViewModel(private val medicineDao: MedicineDao): ViewModel() {
         }
     }
 
-    fun getAllMedicines(): LiveData<List<Medicine>>{
-        return medicineDao.getAllMedicines().asLiveData()
+    fun getAllMedicines(userid: String): LiveData<List<Medicine>>{
+        return medicineDao.getAllMedicines(userid).asLiveData()
+    }
+
+    fun getMedicine(name: String): LiveData<Medicine>{
+        return medicineDao.getMedicine(name).asLiveData()
+    }
+
+    fun updateMedicine(medicine: Medicine){
+        viewModelScope.launch {
+            medicineDao.updateMedicine(medicine)
+        }
     }
 }
 
