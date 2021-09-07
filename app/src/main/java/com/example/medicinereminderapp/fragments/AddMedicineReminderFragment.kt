@@ -1,24 +1,30 @@
 package com.example.medicinereminderapp.fragments
 
-import android.annotation.SuppressLint
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
+import android.app.*
 import android.content.Context
+import android.content.Context.ALARM_SERVICE
+import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.DatePicker
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.activityViewModels
 import com.example.medicinereminderapp.MedicineReminderApplication
 import com.example.medicinereminderapp.R
 import com.example.medicinereminderapp.databinding.FragmentAppointmentBinding
+import com.example.medicinereminderapp.notification.AlarmReceiver
 import com.example.medicinereminderapp.viewmodel.MedicineViewModel
 import com.example.medicinereminderapp.viewmodel.MedicineViewModelFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -32,6 +38,10 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
     val minute = c.get(Calendar.MINUTE)
     private lateinit var user: String
     private lateinit var sharedPreferences: SharedPreferences
+    private val CHANNEL_ID = "medicineReminder"
+    private lateinit var timePicker: MaterialTimePicker
+    private lateinit var alarmManager: AlarmManager
+    private lateinit var pendingIntent: PendingIntent
 
     private val viewModel: MedicineViewModel by activityViewModels {
         MedicineViewModelFactory(
@@ -47,11 +57,15 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         sharedPreferences = activity?.getSharedPreferences("login", Context.MODE_PRIVATE)!!
         user = sharedPreferences.getString("USER_ID","null")!!
+        createNotificationChannel()
 
         binding.fromDateInputText.setOnClickListener{
            DatePickerDialog(
                 requireContext(),
                 { view, year, monthOfYear, dayOfMonth ->
+                    c[Calendar.MONTH] = monthOfYear
+                    c[Calendar.DATE] = dayOfMonth
+                    c[Calendar.YEAR] = year
                     binding.fromDateInputText.setText("$dayOfMonth/$monthOfYear/$year")
                 },
                 year,
@@ -73,22 +87,23 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
                day
            ).apply {
                show()
-            }
+           }
         }
 
         binding.timeInputText.setOnClickListener{
-            TimePickerDialog(
-                requireContext(),
-                { view, hourOfDay, minuteOfDay ->
-                binding.timeInputText.setText("$hourOfDay : $minuteOfDay")
-                },
-                hour,
-                minute,
-                false
-            ).apply {
-                setTitle("Set Medicine Time")
-                show()
-            }
+//            TimePickerDialog(
+//                requireContext(),
+//                { view, hourOfDay, minuteOfDay ->
+//                binding.timeInputText.setText("$hourOfDay : $minuteOfDay")
+//                },
+//                hour,
+//                minute,
+//                false
+//            ).apply {
+//                setTitle("Set Medicine Time")
+//                show()
+//            }
+            showTimePicker()
         }
 
         binding.submit.setOnClickListener {
@@ -124,6 +139,7 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
             binding.toDateInputText.text.toString(),
             binding.timeInputText.text.toString()
         )
+            setAlarm()
             Toast.makeText(requireContext(),"Reminder Added Successfully",Toast.LENGTH_SHORT).show()
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment, ReminderFragment())?.commit()
             bottomNavigationView.selectedItemId = R.id.reminder
@@ -134,6 +150,68 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
             binding.toDateInputLayout.error = "Empty Field"
             binding.timeInputLayout.error = "Empty Field"
         }
+    }
+
+    private fun createNotificationChannel() {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val name = "medicineReminderChannel"
+            val description = "Alarm Manager for Medicine Reminder App"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel(CHANNEL_ID, name, importance)
+            channel.description = description
+
+            val notificationManager = getSystemService(requireContext(),
+                NotificationManager::class.java
+            )
+
+            notificationManager?.createNotificationChannel(channel)
+        }
+    }
+
+    private fun showTimePicker(){
+        timePicker = MaterialTimePicker.Builder()
+            .setTimeFormat(TimeFormat.CLOCK_12H)
+            .setHour(hour)
+            .setMinute(minute)
+            .setTitleText("Set Alarm Time")
+            .build()
+
+        timePicker.show(activity?.supportFragmentManager!!, CHANNEL_ID)
+
+        timePicker.addOnPositiveButtonClickListener {
+            if(timePicker.hour > 12){
+                binding.timeInputText.setText(
+                    String.format("%02d", timePicker.hour - 12) + ":" + String.format(
+                        "%02d", timePicker.minute
+                    ) + " PM"
+                )
+            }else {
+                binding.timeInputText.setText(
+                    String.format("%02d", timePicker.hour) + ":" + String.format(
+                        "%02d", timePicker.minute
+                    ) + " AM"
+                )
+            }
+
+            c[Calendar.HOUR_OF_DAY] = timePicker.hour
+            c[Calendar.MINUTE] = timePicker.minute
+            c[Calendar.SECOND] = 0
+            c[Calendar.MILLISECOND] = 0
+
+        }
+    }
+
+    private fun setAlarm(){
+        alarmManager = activity?.getSystemService(ALARM_SERVICE) as AlarmManager
+        val intent = Intent(requireContext(), AlarmReceiver::class.java)
+
+        pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, 0)
+
+        alarmManager.set(
+            AlarmManager.RTC_WAKEUP,
+            c.timeInMillis,
+            pendingIntent
+        )
     }
 
     private fun getMonth(number: Int): String{

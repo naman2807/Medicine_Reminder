@@ -1,8 +1,12 @@
 package com.example.medicinereminderapp.activity
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
+import android.os.Build.VERSION.SDK
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -10,6 +14,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.getSystemService
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.medicinereminderapp.MainActivity
@@ -24,7 +29,6 @@ class BaseActivity : AppCompatActivity(){
 //    Add toggle button to open NavigationView
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var selectedFragment : Fragment
-
 
 
     private val viewModel : BaseActivityViewModel by viewModels()
@@ -99,7 +103,6 @@ class BaseActivity : AppCompatActivity(){
          }
         bottomNav.setOnNavigationItemSelectedListener(listener)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toggle.onOptionsItemSelected(item)){
