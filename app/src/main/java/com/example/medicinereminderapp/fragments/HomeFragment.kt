@@ -7,15 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicinereminderapp.adapter.*
 import com.example.medicinereminderapp.data.*
 import com.example.medicinereminderapp.databinding.FragmentHome1Binding
-import com.example.medicinereminderapp.databinding.FragmentHomeBinding
-import com.example.medicinereminderapp.model.Categories
-import com.example.medicinereminderapp.model.Doctor
 import com.example.medicinereminderapp.model.Features
 
 class HomeFragment : Fragment() {
