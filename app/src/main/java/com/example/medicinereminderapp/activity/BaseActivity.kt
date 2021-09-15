@@ -2,14 +2,17 @@ package com.example.medicinereminderapp.activity
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Build
 import android.os.Build.VERSION.SDK
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -36,7 +39,8 @@ class BaseActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         val sharedPreferences: SharedPreferences = this.getSharedPreferences("login", Context.MODE_PRIVATE)
         val edit: SharedPreferences.Editor? = sharedPreferences.edit()
-        Log.e("BaseActivity", sharedPreferences.getString("USER_ID","null").toString())
+        val user = sharedPreferences.getString("USER_ID","null").toString()
+        Log.e("BaseActivity", user)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
 
@@ -55,11 +59,25 @@ class BaseActivity : AppCompatActivity(){
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.pill_schedule -> Toast.makeText(this, "Clicked pill schedule", Toast.LENGTH_LONG).show()
-                R.id.setting -> Toast.makeText(this, "Clicked settings", Toast.LENGTH_LONG).show()
-                R.id.problem -> Toast.makeText(this, "Clicked problem", Toast.LENGTH_LONG).show()
-                R.id.share -> Toast.makeText(this, "Clicked share", Toast.LENGTH_LONG).show()
-                R.id.love_it -> Toast.makeText(this, "Clicked love it", Toast.LENGTH_LONG).show()
+                R.id.setting -> {
+                    selectedFragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment, selectedFragment).commit()                }
+                R.id.problem -> {
+                   selectedFragment = ProblemFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment, selectedFragment).commit()
+                }
+                R.id.share -> {
+                    val sendIntent = Intent().apply {
+                        action = Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_TEXT, "URL for App Sharing")
+                        type = "text/plain"
+                    }
+
+                    try {
+                        startActivity(sendIntent)
+                    } catch (e: ActivityNotFoundException) {
+                        Toast.makeText(this, "Error occurred while sharing.", Toast.LENGTH_LONG).show()                    }
+                }
                 R.id.log_out -> {
                     edit?.clear()
                     edit?.apply()
@@ -87,14 +105,6 @@ class BaseActivity : AppCompatActivity(){
                  }
                  R.id.add_reminder -> {
                      selectedFragment = AddMedicineReminderFragment(bottomNav)
-                     viewModel.selectFragment(selectedFragment)
-                 }
-                 R.id.reports -> {
-                     selectedFragment = ReportsFragment()
-                     viewModel.selectFragment(selectedFragment)
-                 }
-                 R.id.assertion -> {
-                     selectedFragment = AffirmationFragment()
                      viewModel.selectFragment(selectedFragment)
                  }
              }

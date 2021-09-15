@@ -26,4 +26,15 @@
     <string name="reminders">Reminders</string>
     <string name="edit_reminder">Edit Reminder</string>
     <string name="update">UPDATE</string>
+    <string name="features">Features</string>
+    <string name="directions">Directions</string>
+    <string name="insurance">Insurance</string>
+    <string name="mini_app_store">Mini App Store</string>
+    <string name="physical_fitness_is_the_first_requisite_of_happiness">Physical fitness is the first requisite of happiness.</string>
+    <string name="send">Send</string>
+    <string name="enter_your_problem">Enter Your problem</string>
+    <string name="report_problem">REPORT PROBLEM</string>
+    <string name="profile">Profile</string>
+    <string name="name_profile">Name:</string>
+    <string name="delete">Delete</string>
 </resources>

@@ -3,9 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/circle.xml" value="0.25277777777777777" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/drawable1.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/gradient1.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/gradient2.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/ic_add_reminder.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/ic_baseline_appointment.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/ic_baseline_error_outline_24.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/ic_pill.xml" value="0.25277777777777777" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/ic_time.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/ic_vaccine.xml" value="0.25" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/img.xml" value="0.25277777777777777" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/drawable/logout.xml" value="0.25" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/activity_base.xml" value="0.25815217391304346" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/activity_main.xml" value="0.24864130434782608" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/app_list.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/circle.xml" value="0.24230072463768115" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/directions_list.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/edit_reminder.xml" value="0.2" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/error_fragment.xml" value="0.21467391304347827" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/feature_list.xml" value="0.24230072463768115" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/fragment_appointment.xml" value="0.264" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/fragment_assertion.xml" value="0.25815217391304346" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/fragment_home.xml" value="0.2" />
@@ -13,10 +30,14 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/fragment_reminder.xml" value="0.15625" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/fragment_reports.xml" value="0.15625" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/home_list_item.xml" value="0.25815217391304346" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/insurance_list.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/list_item.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/login.xml" value="0.12037037037037036" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/nav_header.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/register.xml" value="0.1339918946301925" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/reminder_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/settings_fragment.xml" value="0.21467391304347827" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/layout/template.xml" value="0.24230072463768115" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminder/app/src/main/res/menu/nav_header_menu.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/MedicineReminderApp/app/src/main/res/layout/activity_base.xml" value="0.17980072463768115" />

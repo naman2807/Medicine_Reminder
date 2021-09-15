@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="30sp"
+        android:text="@string/profile"
+        android:textStyle="italic|bold"
+        android:textColor="#28A6E1"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/name_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/name_profile"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="#4B06ED"/>
+
+    <TextView
+        android:id="@+id/name_profile_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        app:layout_constraintLeft_toRightOf="@+id/name_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        tools:text="Name:"
+        android:textSize="20sp"
+        android:textColor="#718CDD"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/address_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/name_profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Address"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="#4B06ED"/>
+
+    <TextView
+        android:id="@+id/address_profile_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/name_profile"
+        app:layout_constraintLeft_toRightOf="@+id/address_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        tools:text="Name:"
+        android:textSize="20sp"
+        android:textColor="#718CDD"
+        android:textStyle="italic"/>
+    <TextView
+        android:id="@+id/phone_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/address_profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Phone Number:"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="#4B06ED"/>
+
+    <TextView
+        android:id="@+id/phone_profile_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/address_profile"
+        app:layout_constraintLeft_toRightOf="@+id/phone_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        tools:text="Name:"
+        android:textSize="20sp"
+        android:textColor="#718CDD"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/email_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/phone_profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Email:"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="#4B06ED"/>
+
+    <TextView
+        android:id="@+id/email_profile_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/phone_profile"
+        app:layout_constraintLeft_toRightOf="@+id/email_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        tools:text="Name:"
+        android:textSize="20sp"
+        android:textColor="#718CDD"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/user_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/email_profile"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:textColor="#4B06ED"
+        android:text="User Id:"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"/>
+
+    <TextView
+        android:id="@+id/user_profile_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/email_profile"
+        app:layout_constraintLeft_toRightOf="@+id/user_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        tools:text="Name:"
+        android:textSize="20sp"
+        android:textColor="#718CDD"
+        android:textStyle="italic"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

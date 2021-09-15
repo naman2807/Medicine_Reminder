@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowId
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -61,7 +60,7 @@ class EditReminderFragment(val medicine: Medicine) : Fragment() {
     }
 
     private fun setCalenderAndTime() {
-        binding.fromDateInputText.setOnClickListener{
+        binding.fromDateInputText.setOnClickListener {
             DatePickerDialog(
                 requireContext(),
                 { view, year, monthOfYear, dayOfMonth ->
@@ -78,7 +77,7 @@ class EditReminderFragment(val medicine: Medicine) : Fragment() {
             }
         }
 
-        binding.toDateInputText.setOnClickListener{
+        binding.toDateInputText.setOnClickListener {
             DatePickerDialog(
                 requireContext(),
                 { view, year, monthOfYear, dayOfMonth ->
@@ -92,7 +91,7 @@ class EditReminderFragment(val medicine: Medicine) : Fragment() {
             }
         }
 
-        binding.timeInputText.setOnClickListener{
+        binding.timeInputText.setOnClickListener {
 //            TimePickerDialog(
 //                requireContext(),
 //                { view, hourOfDay, minuteOfDay ->
@@ -109,19 +108,34 @@ class EditReminderFragment(val medicine: Medicine) : Fragment() {
         }
 
         binding.submit.setOnClickListener {
-            val fromDate : SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val fromDate: SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val frDate = fromDate.parse(binding.fromDateInputText.text.toString())
-            val toDate : SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val toDate: SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val tDate = toDate.parse(binding.toDateInputText.text.toString())
-            if(tDate.before(frDate)){
+            if (tDate.before(frDate)) {
                 binding.toDateInputLayout.error = "Enter Valid Date"
-            }else{
-                setAlarm()
+            } else {
                 updateMedicine()
-                Toast.makeText(requireContext(), "Medicine: ${medicine.name} Updated Successfully", Toast.LENGTH_SHORT).show()
-                activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment, ReminderFragment())?.commit()
+                setAlarm()
+                Toast.makeText(
+                    requireContext(),
+                    "Medicine: ${medicine.name} Updated Successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
+                activity?.supportFragmentManager?.beginTransaction()
+                    ?.replace(R.id.fragment, ReminderFragment())?.commit()
             }
         }
+
+        binding.delete.setOnClickListener {
+            deleteReminder(medicine)
+        }
+    }
+
+    private fun deleteReminder(medicine: Medicine){
+        viewModel.deleteMedicine(medicine)
+        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment, HomeFragment())?.commit()
+        Toast.makeText(requireContext(), medicine.name + " deleted successfully", Toast.LENGTH_SHORT).show()
     }
 
     private fun updateMedicine() {
@@ -189,7 +203,7 @@ class EditReminderFragment(val medicine: Medicine) : Fragment() {
         }
     }
 
-    private fun setAlarm(){
+    private fun setAlarm() {
         alarmManager = activity?.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(requireContext(), AlarmReceiver::class.java)
 

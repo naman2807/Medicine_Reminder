@@ -107,6 +107,12 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
         }
 
         binding.submit.setOnClickListener {
+           verifyDate()
+        }
+    }
+
+    private fun verifyDate(){
+        if(!isAnyFieldEmpty()){
             val fromDate : SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val frDate = fromDate.parse(binding.fromDateInputText.text.toString())
             val toDate : SimpleDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
@@ -116,7 +122,14 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
             }else{
                 addNewMedicine()
             }
+        }else{
+            binding.medicineInputLayout.error = "Empty Field"
+            binding.doctorInputLayout.error = "Empty Field"
+            binding.fromDateInputLayout.error = "Empty Field"
+            binding.toDateInputLayout.error = "Empty Field"
+            binding.timeInputLayout.error = "Empty Field"
         }
+
     }
 
     private fun isAnyFieldEmpty(): Boolean{
@@ -130,7 +143,6 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
     }
 
     private fun addNewMedicine(){
-        if(!isAnyFieldEmpty()){
             viewModel.addMedicine(
             user,
             binding.medicineInputText.text.toString(),
@@ -143,13 +155,6 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
             Toast.makeText(requireContext(),"Reminder Added Successfully",Toast.LENGTH_SHORT).show()
             activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment, ReminderFragment())?.commit()
             bottomNavigationView.selectedItemId = R.id.reminder
-        }else{
-            binding.medicineInputLayout.error = "Empty Field"
-            binding.doctorInputLayout.error = "Empty Field"
-            binding.fromDateInputLayout.error = "Empty Field"
-            binding.toDateInputLayout.error = "Empty Field"
-            binding.timeInputLayout.error = "Empty Field"
-        }
     }
 
     private fun createNotificationChannel() {
@@ -207,8 +212,9 @@ class AddMedicineReminderFragment(val bottomNavigationView: BottomNavigationView
 
         pendingIntent = PendingIntent.getBroadcast(requireContext(), 0, intent, 0)
 
-        alarmManager.set(
+        alarmManager.setRepeating(
             AlarmManager.RTC_WAKEUP,
+            AlarmManager.INTERVAL_DAY,
             c.timeInMillis,
             pendingIntent
         )

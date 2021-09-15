@@ -16,14 +16,4 @@
         android:icon="@drawable/ic_baseline_reminder"
         android:title="@string/reminders"/>
 
-    <item
-        android:id="@+id/reports"
-        android:icon="@drawable/ic_baseline_report"
-        android:title="@string/reports"/>
-
-    <item
-        android:id="@+id/assertion"
-        android:icon="@drawable/ic_baseline_assertion"
-        android:title="@string/assertion"/>
-
 </menu>
